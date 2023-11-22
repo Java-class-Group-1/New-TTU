@@ -122,16 +122,7 @@
                     >  </li>
                 </ul>
               </li>
-              <!-- <li class="sidebar-item">
-                <a
-                  class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="pages-elements.html"
-                  aria-expanded="false"
-                  ><i class="mdi mdi-pencil"></i
-                  ><span class="hide-menu">Class Rooms</span></a
-                >
-              </li> -->
-              <li class="sidebar-item">
+                  <li class="sidebar-item">
                 <a
                   class="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
@@ -153,24 +144,7 @@
                     >
               
                   </li>
-                  <!-- <li class="sidebar-item">
-                    <a href="pages-calendar.html" class="sidebar-link"
-                      ><i class="mdi mdi-calendar-check"></i
-                      ><span class="hide-menu"> Calendar </span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="pages-invoice.html" class="sidebar-link"
-                      ><i class="mdi mdi-bulletin-board"></i
-                      ><span class="hide-menu"> Invoice </span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="pages-chat.html" class="sidebar-link"
-                      ><i class="mdi mdi-message-outline"></i
-                      ><span class="hide-menu"> Chat Option </span></a
-                    >
-                  </li> -->
+            
                 </ul>
               </li>
               <li class="sidebar-item">
@@ -217,23 +191,12 @@
                       ><span class="hide-menu"> View Admin </span></a
                     >
                   </li>
-                  <!-- <li class="sidebar-item">
-                    <a href="error-405.html" class="sidebar-link"
-                      ><i class="mdi mdi-alert-octagon"></i
-                      ><span class="hide-menu"> Error 405 </span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="error-500.html" class="sidebar-link"
-                      ><i class="mdi mdi-alert-octagon"></i
-                      ><span class="hide-menu"> Error 500 </span></a
-                    >
-                  </li> -->
+          
                 </ul>
               </li>
               <li class="sidebar-item p-3">
                 <a
-                  href="https://ttu.edu.gh/"
+                  href="../pageTable/logout.php"
                   target="_blank"
                   class="
                     w-100
@@ -242,7 +205,7 @@
                     align-items-center
                     text-white
                   "
-                  ><i class="mdi mdi-cloud-download font-20 me-2"></i>Upgrade to Pro
+                  ><i class="mdi mdi-cloud-download font-20 me-2"></i>Log Out
                   </a
                 >
               </li>

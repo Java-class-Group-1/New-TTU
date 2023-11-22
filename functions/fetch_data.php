@@ -27,13 +27,30 @@ function fetchAndDisplayFacultyTable() {
                 <tbody>";
 
         foreach ($facultyList as $faculty) {
+            
+              // Fetch faculty name using faculty_id
+              $facultyId = $faculty['Faculty_id'];
+              $facultyStmt = $conn->prepare("SELECT faculty_name FROM faculty WHERE id = :Faculty_id");
+              $facultyStmt->bindParam(':Faculty_id', $facultyId);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $facultyName = $facultyData['faculty_name'];
+
+              // Fetch faculty name using faculty_id
+              $DepID = $faculty['Department_id'];
+              $facultyStmt = $conn->prepare("SELECT depart_name FROM department WHERE id = :Department_id");
+              $facultyStmt->bindParam(':Department_id', $DepID);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $DepName = $facultyData['depart_name'];
+
             echo "<tr>
             <td>{$faculty['id']}</td>
             <td>{$faculty['lec_name']}</td>
             <td>{$faculty['phone']}</td>
             <td>{$faculty['course_taught']}</td>
-            <td>{$faculty['Department_id']}</td>
-            <td>{$faculty['Faculty_id']}</td>
+            <td>{$DepName}</td>
+            <td>{$facultyName}</td>
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
@@ -41,9 +58,7 @@ function fetchAndDisplayFacultyTable() {
      
             </tr>";
         }
-        // <a href='./../process/lectureDelete?{$faculty['id']}'>
-        // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
-    
+        
         echo "</tbody></table>";
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -71,10 +86,21 @@ function fetchDeaprtmentTables() {
                 <tbody>";
 
         foreach ($facultyList as $faculty) {
+
+            
+              // Fetch faculty name using faculty_id
+              $facultyId = $faculty['Faculty_id'];
+              $facultyStmt = $conn->prepare("SELECT faculty_name FROM faculty WHERE id = :Faculty_id");
+              $facultyStmt->bindParam(':Faculty_id', $facultyId);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $facultyName = $facultyData['faculty_name'];
+
+            
             echo "<tr>
             <td>{$faculty['id']}</td>
             <td>{$faculty['depart_name']}</td>
-            <td>{$faculty['Faculty_id']}</td>
+            <td>{$facultyName}</td>
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
@@ -152,11 +178,28 @@ function fetchprogramTables() {
                 <tbody>";
 
         foreach ($facultyList as $faculty) {
+
+              // Fetch faculty name using faculty_id
+              $facultyId = $faculty['faculty_id'];
+              $facultyStmt = $conn->prepare("SELECT faculty_name FROM faculty WHERE id = :facultyId");
+              $facultyStmt->bindParam(':facultyId', $facultyId);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $facultyName = $facultyData['faculty_name'];
+
+              // Fetch faculty name using faculty_id
+              $DepID = $faculty['department_id'];
+              $facultyStmt = $conn->prepare("SELECT depart_name FROM department WHERE id = :department_id");
+              $facultyStmt->bindParam(':department_id', $DepID);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $DepName = $facultyData['depart_name'];
+
             echo "<tr>
             <td>{$faculty['id']}</td>
             <td>{$faculty['prog_name']}</td>
-            <td>{$faculty['department_id']}</td>
-            <td>{$faculty['faculty_id']}</td>
+            <td>{$DepName}</td>
+            <td>{$facultyName}</td>
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>

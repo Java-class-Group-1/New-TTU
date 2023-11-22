@@ -32,6 +32,9 @@ include("../include/sidebar.inc.php");
           <!-- ============================================================== -->
           <!-- Start Page Content -->
           <!-- ============================================================== -->
+          <?php
+  echo $_SESSION['login_success'];
+                      ?>
           <div class="row">
             <!-- Column -->
             <div class="col-md-6 col-lg-3">
@@ -45,7 +48,7 @@ include("../include/sidebar.inc.php");
                                                          
                                 waves-effect waves-light
                               ">
-                      
+      
                  
                     <i class="mdi mdi-view-dashboard"></i></a>
                   </h1>

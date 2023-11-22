@@ -1,3 +1,12 @@
+<?php session_start();
+
+// Check if the session exists
+if (!isset($_SESSION['username'])) {
+    // Redirect to the 404 error page
+    header("Location: ../404.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
