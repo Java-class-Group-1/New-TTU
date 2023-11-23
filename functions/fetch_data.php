@@ -216,6 +216,88 @@ function fetchprogramTables() {
     }
 }
 
+function fetchCourseTables() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, course_level, year, date FROM course_level");
+        $stmt->execute();
+        $facultyList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<table id='example' class='display' style='width:100%'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Course level</th>       
+                        <th>Year</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($facultyList as $course) {
+                echo "<tr>
+                <td>{$course['id']}</td>
+                <td>{$course['course_level']}</td>
+                <td>{$course['year']}</td>
+                <td>{$course['date']}</td>
+                <td>
+                <button class='btn btn-danger deleteButton' data-id='{$course['id']}'>Delete</button>
+    </td>
+     
+            </tr>";
+        }
+        // <a href='./../process/lectureDelete?{$faculty['id']}'>
+        // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
+    
+        echo "</tbody></table>";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+function fetchRoomTables() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, room_name, room_size, location FROM room");
+        $stmt->execute();
+        $facultyList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<table id='example' class='display' style='width:100%'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Room Name</th>       
+                        <th>Room size</th>
+                        <th>Room location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($facultyList as $room) {
+                echo "<tr>
+                <td>{$room['id']}</td>
+                <td>{$room['room_name']}</td>
+                <td>{$room['room_size']}</td>
+                <td>{$room['location']}</td>
+                <td>
+                <button class='btn btn-danger deleteButton' data-id='{$room['id']}'>Delete</button>
+    </td>
+     
+            </tr>";
+        }
+        // <a href='./../process/lectureDelete?{$faculty['id']}'>
+        // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
+    
+        echo "</tbody></table>";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
 // Call the function if needed
 if (isset($_GET['action']) && $_GET['action'] === 'fetchFacultyTable') {
     fetchAndDisplayFacultyTable();
@@ -229,6 +311,12 @@ if (isset($_GET['action']) && $_GET['action'] === 'fetchmainFacultyTable') {
 }
 if (isset($_GET['action']) && $_GET['action'] === 'fetchprogramTable') {
     fetchprogramTables();
+}
+if (isset($_GET['action']) && $_GET['action'] === 'fetchCourseTable') {
+    fetchCourseTables();
+}
+if (isset($_GET['action']) && $_GET['action'] === 'fetchRoomTable') {
+    fetchRoomTables();
 }
 
 

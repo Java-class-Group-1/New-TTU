@@ -56,7 +56,6 @@ include("../include/sidebar.inc.php");
                 <label for="dep_num" class="form-label">Number of Department:</label>
                 <input type="number" class="form-control" id="dep_num" name="dep_num" required>
             </div>
-
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 

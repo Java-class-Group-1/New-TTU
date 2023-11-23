@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $insertStmt->bindParam(':Faculty_id', $Faculty_id);
             $insertStmt->execute();
 
-            echo "Data inserted successfully";
+            echo "Success";
     
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

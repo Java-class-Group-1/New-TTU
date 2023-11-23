@@ -44,7 +44,7 @@ include("../include/sidebar.inc.php");
     <div class="container mt-5">
         <h2 class="text-bg-danger text-center text-bold">Add New Program</h2>
         <div id="successMessage"></div>
-        <form id="lectureForm">
+        <form id="programForm">
             <div class="mb-3">
                 <label for="prog_name" class="form-label">Program Name</label>
                 <input type="text" class="form-control" id="prog_name" name="prog_name" required>
@@ -93,27 +93,27 @@ include("../include/sidebar.inc.php");
     <script>
 
 $(document).ready(function() {
-    $("#lectureForm").submit(function(event) {
+    $("#programForm").submit(function(event) {
         event.preventDefault();
 
         $.ajax({
             type: "POST",
             url: "../process/program_back.php",
-            data: $("#lectureForm").serialize(),
+            data: $("#programForm").serialize(),
             success: function(response) {
                 if (response.trim() === "Data inserted successfully") {
                     // Display success message
                     $("#successMessage").html("<div class='alert alert-success text-center'>Data submitted successfully</div>");
     
                     // Reset the form
-                    $("#lectureForm")[0].reset();
+                    $("#programForm")[0].reset();
     
                     // Redraw the DataTable
-                    $('#lectureForm').DataTable().ajax.reload();
+                    $('#programForm').DataTable().ajax.reload();
                 } else {
                     // Display error message
                     $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
-                    $("#lectureForm")[0].reset();
+                    $("#programForm")[0].reset();
                 }
                  
     

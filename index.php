@@ -16,9 +16,8 @@
                 <div class="card" style="border-radius: 1rem;">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <img src="public/assets/images/login.png"
-                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;  height: 100%;" />
-                        </div>
+                        <img src="public/assets/images/signup.png"
+                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;  height: 100%;" /></div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
                           
@@ -45,7 +44,7 @@
                                         <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
                                     </div>
                                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a
-                                            href="checksignup.php" style="color: red;"> Register here</a></p>
+                                            href="signup form.php" style="color: red;"> Register here</a></p>
                                 </form>
                             </div>
                         </div>
@@ -77,16 +76,16 @@
                 success: function (response) {
                     if (response == 'success') {
                         // Display success alert and redirect after 3 seconds
-                        $('.alert-container').html('<div class="alert alert-success" role="alert">Login successful. Redirecting to the dashboard...</div>');
+                        $('.alert-container').html('<div class="alert text-center alert-success" role="alert">Login successful. Redirecting to the dashboard...</div>');
                         setTimeout(function () {
                             window.location.href = 'pageTable/dashboard.php';
                         }, 3000);
                     } else {
                         // Display error alert
-                        $('.alert-container').html('<div class="alert alert-danger" role="alert">Login failed</div>');
+                        $('.alert-container').html('<div class="alert text-center alert-danger" role="alert">Username and Password incorrect</div>');
                           setTimeout(function () {
                             window.location.href = 'index.php';
-                        }, 300);
+                        }, 3000);
                     }
                 }
             });

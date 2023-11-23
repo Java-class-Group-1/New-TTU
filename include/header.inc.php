@@ -80,7 +80,7 @@ if (!isset($_SESSION['username'])) {
               <b class="logo-icon ps-2">
                 <!-- Dark Logo icon -->
                 <img
-                  src="../public/assets/images/logo-icon.png"
+                  src="../public/assets/images/ttu logo (2).jpg"
                   alt="homepage"
                   class="light-logo"
                   width="25"/>
@@ -90,7 +90,7 @@ if (!isset($_SESSION['username'])) {
               <span class="logo-text ms-2">
                 <!-- dark Logo text -->
                 <img
-                  src="../public/assets/images/logo-text.png"
+                  src="../public/assets/images/ttu (2).png"
                   alt="homepage"
                   class="light-logo"
                 />
@@ -129,49 +129,12 @@ if (!isset($_SESSION['username'])) {
                   ><i class="mdi mdi-menu font-24"></i
                 ></a>
               </li>
-              <!-- ============================================================== -->
-              <!-- create new -->
-              <!-- ============================================================== -->
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <span class="d-none d-md-block"
-                    >Create New <i class="fa fa-angle-down"></i
-                  ></span>
-                  <span class="d-block d-md-none"
-                    ><i class="fa fa-plus"></i
-                  ></span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Admin User</a></li>
-                  <li><a class="dropdown-item" href="#">New Exams TTs</a></li>
-                  <li><a class="dropdown-item" href="#">New Exams TTs</a>
-                  </li>
-                </ul>
-              </li>
+            
               <!-- ============================================================== -->
               <!-- Search -->
               <!-- ============================================================== -->
               <li class="nav-item search-box">
-                <a
-                  class="nav-link waves-effect waves-dark"
-                  href="javascript:void(0)"
-                  ><i class="mdi mdi-magnify fs-4"></i
-                ></a>
-                <form class="app-search position-absolute">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search &amp; enter"
-                  />
-                  <a class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-                </form>
+                
               </li>
             </ul>
             <!-- ============================================================== -->
@@ -182,33 +145,12 @@ if (!isset($_SESSION['username'])) {
               <!-- Comment -->
               <!-- ============================================================== -->
               <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="mdi mdi-bell font-24"></i>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
+               
               </li>
-              <!-- ============================================================== -->
-              <!-- End Comment -->
-              <!-- ============================================================== -->
-              <!-- ============================================================== -->
-              <!-- Messages -->
+                 <!-- Messages -->
               <!-- ============================================================== -->
               <li class="nav-item dropdown">
-                <a
+                <!-- <a
                   class="nav-link dropdown-toggle waves-effect waves-dark"
                   href="#"
                   id="2"
@@ -216,7 +158,7 @@ if (!isset($_SESSION['username'])) {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <i class="font-24 mdi mdi-comment-processing"></i>
+                  <i class="font-24 mdi mdi-comment-processing"></i> -->
                 </a>
                 <ul
                   class="
@@ -338,7 +280,7 @@ if (!isset($_SESSION['username'])) {
                   aria-expanded="false"
                 >
                   <img
-                    src="../public/assets/images/users/1.jpg"
+                    src="../public/assets/images/ttu logo.jpg"
                     alt="user"
                     class="rounded-circle"
                     width="31"
@@ -352,10 +294,10 @@ if (!isset($_SESSION['username'])) {
                     ><i class="mdi mdi-account me-1 ms-1"></i> My Profile</a
                   >
                   <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-wallet me-1 ms-1"></i> My Balance</a
+                    ><i class="mdi mdi-wallet me-1 ms-1"></i> Student comment</a
                   >
-                  <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-email me-1 ms-1"></i> Inbox</a
+                  <a class="dropdown-item" href="../pageTable/notice.php"
+                    ><i class="mdi mdi-email me-1 ms-1"></i> Notice</a
                   >
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="javascript:void(0)"
@@ -363,7 +305,7 @@ if (!isset($_SESSION['username'])) {
                     Setting</a
                   >
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)"
+                  <a class="dropdown-item" href="../pageTable/logout.php"
                     ><i class="fa fa-power-off me-1 ms-1"></i> Logout</a
                   >
                   <div class="dropdown-divider"></div>

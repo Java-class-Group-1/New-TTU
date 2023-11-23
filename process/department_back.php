@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($existingRecord) {
             // Record already exists, throw an error
-            echo "Error: Lecture with the course is already in the system";
+            echo "Error: Department with the course is already in the system";
         } else {
             // Insert data into the database
             $insertQuery = "INSERT INTO department (depart_name,faculty_id) 

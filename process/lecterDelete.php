@@ -7,7 +7,7 @@ include('../include/db_con.php');
 
         try {
             // Delete the corresponding row
-            $stmt = $conn->prepare("DELETE FROM Lecture WHERE id = :facultyId");
+            $stmt = $conn->prepare("DELETE FROM lectures WHERE id = :facultyId");
             $stmt->bindParam(':facultyId', $facultyId);
             $stmt->execute();
 

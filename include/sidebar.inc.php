@@ -88,7 +88,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="pages-buttons.html"
+                  href="../pageTable/courselevel.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-relative-scale"></i
                   ><span class="hide-menu">Course Level</span></a
@@ -132,15 +132,15 @@
                 >
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="index2.html" class="sidebar-link"
+                  <a href="../pageTable/room.php" class="sidebar-link"
                       ><i class="mdi mdi-view-dashboard"></i
-                      ><span class="hide-menu">Add rooms </span></a
+                      ><span class="hide-menu">Add & View rooms </span></a
                     >
                   </li>
                   <li class="sidebar-item">
-                    <a href="pages-gallery.html" class="sidebar-link"
+                    <a href="../pageTable/roomavailable.php" class="sidebar-link"
                       ><i class="mdi mdi-multiplication-box"></i
-                      ><span class="hide-menu"> View Rooms </span></a
+                      ><span class="hide-menu"> Available Rooms </span></a
                     >
               
                   </li>
@@ -196,7 +196,7 @@
               </li>
               <li class="sidebar-item p-3">
                 <a
-                  href="../pageTable/logout.php"
+                  href="../pageTable/notice.php"
                   target="_blank"
                   class="
                     w-100
@@ -205,10 +205,11 @@
                     align-items-center
                     text-white
                   "
-                  ><i class="mdi mdi-cloud-download font-20 me-2"></i>Log Out
+                  ><i class="mdi mdi-cloud-download font-20 me-2"></i>Notice from students
                   </a
                 >
               </li>
+            
             </ul>
           </nav>
           <!-- End Sidebar navigation -->
