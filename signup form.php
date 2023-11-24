@@ -137,10 +137,10 @@
               window.location.href = 'index.php';
             }, 3000);
           } else {
-            $('.alert-container').html('<div class="alert alert-danger" role="alert">Sign Up failed</div>');
-            setTimeout(function() {
-              window.location.href = 'signup form.php';
-            }, 3000);
+            $('.alert-container').html('<div class="alert alert-danger" role="alert">Sign Up failed: Admin Email or Username already Exist</div>');
+            // setTimeout(function() {
+            //   window.location.href = 'signup form.php';
+            // }, 3000);
           }
         }
       });

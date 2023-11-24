@@ -20,17 +20,11 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets/images/favicon.png"
+      href="public/assets/images/favicon.png"
     />
     <!-- Custom CSS -->
-    <link href="../dist/css/style.min.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+    <link href="public/dist/css/style.min.css" rel="stylesheet" />
+    </head>
 
   <body>
     <div class="main-wrapper">
@@ -57,7 +51,7 @@
             YOU SEEM TO BE TRYING TO FIND HIS WAY HOME
           </p>
           <a
-            href="index.html"
+            href="index.php"
             class="
               btn btn-danger btn-rounded
               waves-effect waves-light
@@ -87,9 +81,9 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="public/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="public/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

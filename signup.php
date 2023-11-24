@@ -18,13 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone = $_POST['phone'];
 
         // Check if the username already exists in the database
-        $checkUsernameStmt = $pdo->prepare("SELECT * FROM administrator WHERE username = :username");
+        $checkUsernameStmt = $pdo->prepare("SELECT * FROM administrator WHERE username = :username AND admin_email = :adminemail");
         $checkUsernameStmt->bindParam(':username', $username);
+        $checkUsernameStmt->bindParam(':adminemail', $adminemail);
         $checkUsernameStmt->execute();
 
         if ($checkUsernameStmt->rowCount() > 0) {
             // Username already exists, handle accordingly (e.g., show an error message)
-            echo 'Username already exists';
+            echo 'Username And Admin Email already exists';
             exit();
         }
 

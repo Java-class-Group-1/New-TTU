@@ -157,13 +157,13 @@
                 >
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="authentication-login.html" class="sidebar-link"
+                    <a href="../pageTable/malpractice.php" class="sidebar-link"
                       ><i class="mdi mdi-all-inclusive"></i
                       ><span class="hide-menu"> Fill Form </span></a
                     >
                   </li>
                   <li class="sidebar-item">
-                    <a href="authentication-register.html" class="sidebar-link"
+                    <a href="malpracticeTable.php" class="sidebar-link"
                       ><i class="mdi mdi-all-inclusive"></i
                       ><span class="hide-menu"> View malpractice students </span></a
                     >
