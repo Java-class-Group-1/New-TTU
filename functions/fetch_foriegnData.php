@@ -33,7 +33,6 @@ function fetchDepartmentData() {
         return false;
     }
 }
-<<<<<<< HEAD
 function fetchcoursesData() {
     global $conn;
 
@@ -94,18 +93,12 @@ function fetchCourselevelData() {
         return false;
     }
 }
-=======
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
 // You can add more functions for other database operations as needed.
 function fetchRoomData() {
     global $conn;
 
     try {
-<<<<<<< HEAD
         $stmt = $conn->prepare("SELECT id, room_name,location,room_size FROM room");
-=======
-        $stmt = $conn->prepare("SELECT id, room_name,location FROM room");
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
         $stmt->execute();
         $room = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
