@@ -33,10 +33,10 @@ include("../include/sidebar.inc.php");
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
+        <!-- <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Tables</h4>
+               <h4 class="page-title">Tables</h4> 
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -49,7 +49,7 @@ include("../include/sidebar.inc.php");
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
          <div class="container-fluid">
      
               <div class="card">

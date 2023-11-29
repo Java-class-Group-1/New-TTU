@@ -53,13 +53,12 @@
                 >
               </li>
 
-
               <li class="sidebar-item">
-                <a  class="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
+                <a  class="sidebar-link waves-effect waves-dark"
+                  href="form-basic.html"
                   aria-expanded="false"
                   ><i class="mdi mdi-receipt"></i
-                  ><span class="hide-menu">Class TTs </span></a
+                  ><span class="hide-menu">Class Time Table </span></a
                 >
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
@@ -83,8 +82,6 @@
                 </ul>
               </li>
 
-
-
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -96,13 +93,13 @@
               </li>
               <li class="sidebar-item">
                 <a
-                  class="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
+                  class="sidebar-link waves-effect waves-dark"
+                  href="../pageTable/rooms.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-multiplication-box"></i
                   ><span class="hide-menu">Exams TTs </span></a
                 >
-                <ul aria-expanded="false" class="collapse first-level">
+                <!-- <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
                     <a href="icon-material.html" class="sidebar-link"
                       ><i class="mdi mdi-multiplication-box"></i
@@ -120,17 +117,17 @@
                       ><i class="mdi mdi-multiplication-box"></i
                       ><span class="hide-menu"> View Available Rooms </span></a
                     >  </li>
-                </ul>
+                </ul> -->
               </li>
                   <li class="sidebar-item">
                 <a
-                  class="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
+                  class="sidebar-link waves-effect waves-dark"
+                  href="../pageTable/room.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-move-resize-variant"></i
                   ><span class="hide-menu">Class Rooms </span></a
                 >
-                <ul aria-expanded="false" class="collapse first-level">
+                <!-- <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
                   <a href="../pageTable/room.php" class="sidebar-link"
                       ><i class="mdi mdi-view-dashboard"></i
@@ -145,40 +142,40 @@
               
                   </li>
             
-                </ul>
+                </ul> -->
               </li>
               <li class="sidebar-item">
                 <a
-                  class="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
+                  class="sidebar-link waves-effect waves-dark"
+                  href="../pageTable/malpractice.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-account-key"></i
                   ><span class="hide-menu">Malpractice </span></a
                 >
-                <ul aria-expanded="false" class="collapse first-level">
+                <!-- <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="authentication-login.html" class="sidebar-link"
+                    <a href="../pageTable/malpractice.php" class="sidebar-link"
                       ><i class="mdi mdi-all-inclusive"></i
                       ><span class="hide-menu"> Fill Form </span></a
                     >
                   </li>
                   <li class="sidebar-item">
-                    <a href="authentication-register.html" class="sidebar-link"
+                    <a href="malpracticeTable.php" class="sidebar-link"
                       ><i class="mdi mdi-all-inclusive"></i
                       ><span class="hide-menu"> View malpractice students </span></a
                     >
                   </li>
-                </ul>
+                </ul> -->
               </li>
               <li class="sidebar-item">
                 <a
-                  class="sidebar-link has-arrow waves-effect waves-dark"
+                  class="sidebar-link waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
                   ><i class="mdi mdi-relative-scale"></i
                   ><span class="hide-menu">Admin </span></a
                 >
-                <ul aria-expanded="false" class="collapse first-level">
+                <!-- <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
                     <a href="error-403.html" class="sidebar-link"
                       ><i class="mdi mdi-alert-octagon"></i
@@ -192,7 +189,7 @@
                     >
                   </li>
           
-                </ul>
+                </ul> -->
               </li>
               <li class="sidebar-item p-3">
                 <a
@@ -201,6 +198,7 @@
                   class="
                     w-100
                     btn btn-cyan
+                    btn-info
                     d-flex
                     align-items-center
                     text-white

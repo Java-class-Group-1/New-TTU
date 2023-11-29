@@ -36,6 +36,8 @@ if (!isset($_SESSION['username'])) {
     <!-- Custom CSS -->
     <link href="../public/dist/css/style.min.css" rel="stylesheet" />
  <!-- Custom CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
  <link
       href="../public/assets/libs/fullcalendar/dist/fullcalendar.min.css"
       rel="stylesheet"
@@ -290,17 +292,15 @@ if (!isset($_SESSION['username'])) {
                   class="dropdown-menu dropdown-menu-end user-dd animated"
                   aria-labelledby="navbarDropdown"
                 >
-                  <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="mdi mdi-account me-1 ms-1"></i> My Profile</a
-                  >
-                  <a class="dropdown-item" href="javascript:void(0)"
+                <br>
+                  <a class="dropdown-item" href="../pageTable/notice.php"
                     ><i class="mdi mdi-wallet me-1 ms-1"></i> Student comment</a
                   >
-                  <a class="dropdown-item" href="../pageTable/notice.php"
+                  <!-- <a class="dropdown-item" href="../pageTable/notice.php"
                     ><i class="mdi mdi-email me-1 ms-1"></i> Notice</a
-                  >
+                  > -->
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)"
+                  <a class="dropdown-item" href="../pageTable/resetpass.php"
                     ><i class="mdi mdi-settings me-1 ms-1"></i> Account
                     Setting</a
                   >

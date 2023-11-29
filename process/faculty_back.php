@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Error: faculty name  is already in the system";
         } else {
             // Insert data into the database
-            $insertQuery = "INSERT INTO faculty (faculty_name,number_of_departments) 
+            $insertQuery = "INSERT INTO faculty (faculty_name,names_of_departments) 
                             VALUES (:faculty_name, :dep_num)";
             $insertStmt = $conn->prepare($insertQuery);
             $insertStmt->bindParam(':faculty_name', $faculty_name);

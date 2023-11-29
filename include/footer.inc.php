@@ -38,11 +38,21 @@
     <script src="../public/dist/js/pages/calendar/cal-init.js"></script>
   
    <!-- All Jquery -->
+   <script src="../public/assets/libs/flot/excanvas.js"></script>
+    <script src="../public/assets/libs/flot/jquery.flot.js"></script>
+    <script src="../public/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="../public/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="../public/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="../public/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="../public/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../public/dist/js/pages/chart/chart-page-init.js"></script>
+   <!-- All Jquery -->
     
     <script src="../public/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
     <script src="../public/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="../public/assets/extra-libs/DataTables/datatables.min.js"></script>
-    <script>
+  
+   <script>
       /****************************************
        *       Basic Table                   *
        ****************************************/

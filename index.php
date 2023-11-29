@@ -43,8 +43,10 @@
                                     <div class="pt-1 mb-6">
                                         <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
                                     </div>
-                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a
-                                            href="signup form.php" style="color: red;"> Register here</a></p>
+                                        <p class="pb-lg-2  text-center" style="color: #393f81;">Don't have an account? <a
+                                                href="signup form.php" style="color: red;"> Register here</a></p>
+                                    <p class="pb-lg-2 text-center" style="color: #393f81;">Have you forgotten your password. <a
+                                            href="forgetpassw.php" style="color: blue;"> forget Password</a></p>
                                 </form>
                             </div>
                         </div>

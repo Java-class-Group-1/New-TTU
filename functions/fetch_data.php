@@ -120,7 +120,7 @@ function fetchmainFacultyTables() {
     global $conn;
 
     try {
-        $stmt = $conn->prepare("SELECT id, faculty_name, number_of_departments, date FROM faculty");
+        $stmt = $conn->prepare("SELECT id, faculty_name, names_of_departments, date FROM faculty");
         $stmt->execute();
         $facultyList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -129,18 +129,21 @@ function fetchmainFacultyTables() {
                     <tr>
                         <th>ID</th>
                         <th>Faculty Name</th>       
-                        <th>Number_of_departments</th>
+                        <th>Names of departments</th>
                         <th>Date</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>";
-
         foreach ($facultyList as $faculty) {
+            $dep = wordwrap(strtoupper($faculty['names_of_departments']),10);
+            $fac = strtoupper($faculty['faculty_name']);
+        
             echo "<tr>
+    
             <td>{$faculty['id']}</td>
-            <td>{$faculty['faculty_name']}</td>
-            <td>{$faculty['number_of_departments']}</td>
+            <td>{$fac}</td>
+            <td>{$dep}</td>
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>

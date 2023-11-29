@@ -31,14 +31,9 @@ include("../include/sidebar.inc.php");
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-          <!-- Button to trigger the modal -->
-          <!-- <h2 class="text-right">
-            <a href="#" class="text-decoration-none text-danger text-right align-items-center" data-bs-toggle="modal" data-bs-target="#addFacultyModal">
-              <i class="mdi mdi-account-key"></i> Add Faculty
-            </a>
-          </h2> -->
+    
                 <div class="text-right">
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal"       data-bs-target="#addFacultyModal">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal"       data-bs-target="#addFacultyModal">
           <i class="mdi mdi-account-key"></i> Add Faculty
         </button>
       </div>
@@ -61,8 +56,9 @@ include("../include/sidebar.inc.php");
                       <input type="text" class="form-control" id="faculty_name" name="faculty_name" required>
                     </div>
                     <div class="mb-3">
-                      <label for="dep_num" class="form-label">Number of Department:</label>
-                      <input type="number" class="form-control" id="dep_num" name="dep_num" required>
+                      <label for="dep_num" class="form-label">Names of Department:</label>
+                      <textarea name="dep_num" id="dep_num" class="form-control" cols="30" rows="10" required></textarea>
+                      <!-- <input type="text" class="form-control" id="" name="" > -->
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -76,13 +72,15 @@ include("../include/sidebar.inc.php");
           
           <!-- Existing content -->
           <div class="container mt-5">
-            <h2 class="text-bg-danger text-center text-bold">Faculty Details</h2>
+            <h2 class="text-danger text-center text-bold">Faculty Details</h2>
             <div id="dataTableContainer"></div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+        </div>
+        </div>
+        </div>
+      
+    
 
   <!-- JavaScript imports -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -112,6 +110,7 @@ include("../include/sidebar.inc.php");
 
               // Reload the DataTable (assuming it has the ID 'example')
               // $('#example').DataTable().ajax.reload(); // Use '#example' for DataTable selector
+              fetchAndDisplayData();
               hideSuccessMessage();
             } else {
               // Display error message

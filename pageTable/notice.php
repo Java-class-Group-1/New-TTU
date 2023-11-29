@@ -11,7 +11,7 @@ include("../include/sidebar.inc.php");
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
+        <!-- <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
               <h4 class="page-title">Students Notice</h4>
@@ -27,7 +27,7 @@ include("../include/sidebar.inc.php");
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
          <div class="container-fluid">
      
               <div class="card">
@@ -35,7 +35,7 @@ include("../include/sidebar.inc.php");
 
 
 <div class="container mt-5">
-  <h2>Student Notices</h2>
+  <h2 class="text-danger text-center text-uppercase text-bold"><u> <b>Student Notices </b> </u> </h2> <br><br>
   <table class="table">
     <thead>
       <tr>
@@ -106,5 +106,4 @@ include("../include/sidebar.inc.php");
 <?php 
 include("../include/footer.inc.php");
  
-
 ?>

@@ -29,21 +29,7 @@ include("../include/sidebar.inc.php");
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Tables</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Department</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
+         
           
          <div class="container-fluid">
      
@@ -52,7 +38,7 @@ include("../include/sidebar.inc.php");
                   <!-- <div class="container mt-5"> -->
                               <!-- Add Department Button -->
                     <button class="btn btn-primary" id="addDepartmentBtn" data-bs-toggle="modal" data-bs-target="#addDepartmentModal"><i class="mdi mdi-account-key"></i>Add Department</button>
-                </div>
+                
 
                 <!-- Modal for Adding Department -->
 <div class="modal fade" id="addDepartmentModal" tabindex="-1" aria-labelledby="addDepartmentModalLabel" aria-hidden="true">

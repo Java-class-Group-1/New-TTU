@@ -31,38 +31,20 @@ include("../include/sidebar.inc.php");
 <body>
 <div class="page-wrapper">
         <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Tables</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Programs</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+
          <div class="container-fluid">
      
               <div class="card">
                 <div class="card-body">
 
-                <button id="showProgramFormButton" class="btn btn-primary">Add New Program</button>
+                <button id="showProgramFormButton" class="btn btn-primary">Add New Room</button>
 
 <div class="modal fade" id="programModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title text-bg-danger text-center text-bold">Add Program</h4>
+                <h4 class="modal-title text-bg-danger text-center text-bold">Add Room</h4>
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
             </div>
             
@@ -100,6 +82,8 @@ include("../include/sidebar.inc.php");
     <h2 class="text-bg-danger text-center text-bold">Room Details </h2>
 
         <div id="dataTableContainer"></div>
+    </div>
+    </div>
     </div>
     </div>
     </div>
