@@ -120,7 +120,6 @@ function fetchmalData() {
         return false;
     }
 }
-<<<<<<< HEAD
 
 
  
@@ -238,7 +237,5 @@ function getNotices() {
 //     echo "Department: " . $notice['department'] . "<br>";
 //     echo "<br>";
 // }
-=======
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
 
 ?>

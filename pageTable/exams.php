@@ -25,7 +25,7 @@ include("../include/sidebar.inc.php");
         <div class="card-body">
 
      
-        <h1 class="text-center btn-info">DEPARTMENT BY DEPARTMENT TIME TABLE</h1>
+        <h1 class="text-center text-info">DEPARTMENT BY DEPARTMENT TIME TABLE</h1>
         <form id="deapartmentSelectForm" method="post">
         <!-- Select options for class -->
         <div class="form-group">
@@ -71,23 +71,22 @@ include("../include/sidebar.inc.php");
 <!-- Table to display student data -->
 <table id="studentDataTable" class="display text-center">
 
-                <thead style="width: 50%;">
-                    <tr style="width: 50%;">
-                        <th>Day</th>
-                        <th>Date</th>
-                        <th>Course ID</th>
-                        
-                        <th>Program ID</th>
-                        <th>Department ID</th>
-                        <th>Faculty ID</th>
+                <thead style="width: 100%;">
+                    <tr style="width: 100%; background-color: lightblue;">
+                        <th>Day/Date</th>
+                        <th>Course program</th>
+                        <th>Course</th>                        
+                    
+                        <th>Department </th>
+                        <th>Faculty </th>
                         <th>Session</th>
-                        <th>Time Start</th>
-                        <th>Time End</th>                        
+                        <th>Time Set</th>
+                                          
                         <th>Hall</th>
-                        <th>Invigilator ID</th>
+                        <th>Invigilator </th>
                         <th>Academic Year</th>
                         <th>Semester</th>
-                        <th>Date Sent</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -132,20 +131,18 @@ include("../include/sidebar.inc.php");
                  
             },
             columns: [
-                { data: 'day'},
-                { data: 'date'},
-                { data: 'course_id'},
-                { data: 'course_level_id'},
-                { data: 'program_id'},
-                { data: 'department_id'},
-                { data: 'faculty_id'},
+             
+                { data: 'day_date'},
+                { data: 'course_program'},
+                { data: 'course'},
+                { data: 'department'},
+                { data: 'faculty'},
+                { data: 'time_range'},
                 { data: 'session'},
-                { data: 'time_start'},
-                { data: 'time_end'},
                 { data: 'hall'},
-                { data: 'invigilator_id'},
+                { data: 'invigilator'},
                 { data: 'acdyr'},
-                { data: 'sem'} 
+                { data: 'sem'}
             ],
             dom: 'Bfrtip', // Add buttons to the DOM
             buttons: [

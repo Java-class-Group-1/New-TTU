@@ -1,85 +1,133 @@
-<?php
-// Include your database connection file
-include('../include/db_con.php');
-
-// include("../include/header.inc.php");
-// include("../include/sidebar.inc.php");
+<?php 
+include("../include/header.inc.php");
+include("../include/sidebar.inc.php");
 
 ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<?php
-// Function to fetch data
-<<<<<<< HEAD
-function fetchmalData() {
-=======
-public function fetchmalData() {
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
-    global $conn; // Use the connection inside the function
-
-    try {
-        $stmt = $conn->query("SELECT * FROM malpractice_reports");
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-// Fetch data from the function
-$malpracticeData = fetchmalData();
-?>
-    <style>
-        /* Set the table width to 50% */
-        table,tr,td {
-            width: 50%;
-        }
-    </style>
-
+  <!-- Other meta tags and link tags -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Load DataTables Buttons and its dependencies -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    
 </head>
-
 <body>
 <div class="page-wrapper">
-        
-        <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-        <h2 class="mt-4 mb-3 text-center text-info">Malpractice Reports</h2>
-        <table class="table table-bordered table-striped">
-            <thead class="table-light">
-                <tr>
-                    <?php
-                    // Generate table headers dynamically from the fetched data's keys (columns)
-                    if (isset($malpracticeData) && count($malpracticeData) > 0) {
-                        foreach ($malpracticeData[0] as $key => $value) {
-                            echo "<th scope='col'>$key</th>";
-                        }
-                    } else {
-                        echo "<th>No data available</th>";
-                    }
-                    ?>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Display fetched data in table rows
-                if (isset($malpracticeData) && count($malpracticeData) > 0) {
-                    foreach ($malpracticeData as $row) {
-                        echo "<tr>";
-                        foreach ($row as $value) {
-                            echo "<td>" . $value . "</td>";
-                        }
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='" . count($malpracticeData[0]) . "'>No records found</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+    <!-- ... -->
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+
+     
+        <h1 class="text-center text-info">MALPRACTICE FORM LIST</h1>
+    
+
+<!-- Add a container for the length menu -->
+<center>
+<div class="input-group mt-2">
+  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  <!-- <label for="inputGroupSelect01">Records per page:</label> -->
+  <select class="" id="inputGroupSelect01">
+            <option value="10">10</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+        </select>
     </div>
-    <?php 
-// include("../include/footer.inc.php");
+    </center>
+  
+<!-- Table to display student data -->
+<table id="studentDataTable" class="display text-center">
+<thead style="width: 100%;">
+                    <tr style="width: 100%; background-color: lightblue;">
+                        
+                    <th>Student index</th>
+                        <th>Student Name</th>
+                        <th>Department</th>                        
+                        <th>Course</th>
+                        <th>supervisor_name</th>
+                        <th>supervisor_role</th>                        
+                    
+                        <th>Hall</th>
+                        <th>Data & Time </th>
+                        <th>malpractice Type</th>
+                        <th>Item</th>
+                                          
+                        <th>Description</th>
+                    
+                    </tr>
+                </thead>
+          </table>
+    </div>
+    </div>
+ 
+
+
+
+
+    <!-- Include DataTables and jQuery libraries -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+   
+  
+
+  <script>
+
+var dataTable = $('#studentDataTable').DataTable({
+      ajax: {
+        url: '../process/malpracticeform.php',
+        type: 'POST',
+        dataSrc: ''
+      },
+      columns: [
+
+                { data: 'student_index'},
+                { data: 'student_name'},
+                { data: 'Department'},
+                { data: 'Course'},
+                { data: 'supervisor_name'},
+                { data: 'supervisor_role'},
+                { data: 'Hall'},
+                { data: 'Data_Time'},
+                { data: 'malpractice_type'},
+                { data: 'Item'},
+                { data: 'description'}
+            
+            ],
+            dom: 'Bfrtip', // Add buttons to the DOM
+            buttons: [
+                'copy', // Copy to clipboard
+                'csv', // Export as CSV
+                'print' // Print
+            ],
+        lengthMenu: [10, 50, 100, 1000], // Define the options for displaying records per page
+        pageLength: 10, // Default number of records to display
+    });
+   // Handle changes to the length menu select
+   $('#inputGroupSelect01').on('change', function () {
+      dataTable.page.len($(this).val()).draw();
+    });
+  </script>
+
+
+        
+<?php 
+include("../include/footer.inc.php");
  
 
 ?>

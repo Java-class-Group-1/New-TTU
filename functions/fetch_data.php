@@ -54,7 +54,9 @@ function fetchAndDisplayFacultyTable() {
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
-        </td>
+            <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
+    
+            </td>
      
             </tr>";
         }
@@ -104,7 +106,9 @@ function fetchDeaprtmentTables() {
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
-        </td>
+            <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
+        
+            </td>
      
             </tr>";
         }
@@ -147,7 +151,9 @@ function fetchmainFacultyTables() {
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
-        </td>
+            <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
+        
+            </td>
      
             </tr>";
         }
@@ -207,7 +213,9 @@ function fetchprogramTables() {
             <td>{$faculty['date']}</td>
             <td>
             <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
-        </td>
+            <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
+        
+            </td>
      
             </tr>";
         }
@@ -266,12 +274,12 @@ function fetchcoursesTables() {
             
             <td>
             <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
-            <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
+            <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Edit</button>
         </td>
      
             </tr>";
         }
-        // <a href='./../process/lectureDelete?{$faculty['id']}'>
+         
         // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
     
         echo "</tbody></table>";
@@ -326,14 +334,12 @@ function fetchExamsables() {
             
             <td>
             <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
-            <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
+            <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Edit</button>
         </td>
      
             </tr>";
         }
-        // <a href='./../process/lectureDelete?{$faculty['id']}'>
-        // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
-    
+
         echo "</tbody></table>";
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -367,7 +373,9 @@ function fetchCourseTables() {
                 <td>{$course['date']}</td>
                 <td>
                 <button class='btn btn-danger deleteButton' data-id='{$course['id']}'>Delete</button>
-    </td>
+                <button class='btn btn-success editButton' data-id='{$course['id']}'>Edit</button>
+    
+                </td>
      
             </tr>";
         }
@@ -408,7 +416,9 @@ function fetchRoomTables() {
                 <td>{$room['location']}</td>
                 <td>
                 <button class='btn btn-danger deleteButton' data-id='{$room['id']}'>Delete</button>
-    </td>
+                <button class='btn btn-success editButton' data-id='{$room['id']}'>Edit</button>
+
+                </td>
      
             </tr>";
         }

@@ -117,25 +117,15 @@
                   ><i class="mdi mdi-multiplication-box"></i
                   ><span class="hide-menu">View Exams TTs </span></a
                 >
-                <!-- <ul aria-expanded="false" class="collapse first-level">
-                  <li class="sidebar-item">
-                    <a href="icon-material.html" class="sidebar-link"
-                      ><i class="mdi mdi-multiplication-box"></i
-                      ><span class="hide-menu">Add Exams TTs</span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="icon-fontawesome.html" class="sidebar-link"
-                      ><i class="mdi mdi-multiplication-box"></i
-                      ><span class="hide-menu"> View Exams TTs </span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="pages-gallery.html" class="sidebar-link"
-                      ><i class="mdi mdi-multiplication-box"></i
-                      ><span class="hide-menu"> View Available Rooms </span></a
-                    >  </li>
-                </ul> -->
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="../pageTable/availableroom.php"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-relative-scale"></i
+                  ><span class="hide-menu">Available Rooms Left</span></a
+                >
               </li>
                   <li class="sidebar-item">
                 <a
@@ -170,20 +160,16 @@
                   ><i class="mdi mdi-account-key"></i
                   ><span class="hide-menu">Malpractice </span></a
                 >
-                <!-- <ul aria-expanded="false" class="collapse first-level">
-                  <li class="sidebar-item">
-                    <a href="../pageTable/malpractice.php" class="sidebar-link"
-                      ><i class="mdi mdi-all-inclusive"></i
-                      ><span class="hide-menu"> Fill Form </span></a
-                    >
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="malpracticeTable.php" class="sidebar-link"
-                      ><i class="mdi mdi-all-inclusive"></i
-                      ><span class="hide-menu"> View malpractice students </span></a
-                    >
-                  </li>
-                </ul> -->
+              </li>
+
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark"
+                  href="../pageTable/malpracticeTable.php"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-account-key"></i
+                  ><span class="hide-menu">Malpractice List </span></a
+                >
               </li>
               <li class="sidebar-item">
                 <a

@@ -16,11 +16,11 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="keywords"
-      content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"
+      content=""
     />
     <meta
       name="description"
-      content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
+      content=""
     />
     <meta name="robots" content="noindex,nofollow" />
     <title>CLASS AND EXAMS REGULATORY SYSTEM</title>
@@ -37,18 +37,9 @@ if (!isset($_SESSION['username'])) {
     <link href="../public/dist/css/style.min.css" rel="stylesheet" />
  <!-- Custom CSS -->
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-  
-=======
 
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
- <link
-      href="../public/assets/libs/fullcalendar/dist/fullcalendar.min.css"
-      rel="stylesheet"
-    />
-    <link href="../public/assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
- 
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
   </head>
 
   <body>
@@ -297,11 +288,7 @@ if (!isset($_SESSION['username'])) {
                   class="dropdown-menu dropdown-menu-end user-dd animated"
                   aria-labelledby="navbarDropdown"
                 >
-<<<<<<< HEAD
                 <br>
-=======
-                
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                   <a class="dropdown-item" href="../pageTable/notice.php"
                     ><i class="mdi mdi-wallet me-1 ms-1"></i> Student comment</a
                   >
@@ -319,11 +306,11 @@ if (!isset($_SESSION['username'])) {
                   >
                   <div class="dropdown-divider"></div>
                   <div class="ps-4 p-10">
-                    <a
+                    <!-- <a
                       href="javascript:void(0)"
                       class="btn btn-sm btn-success btn-rounded text-white"
                       >View Profile</a
-                    >
+                    > -->
                   </div>
                 </ul>
               </li>

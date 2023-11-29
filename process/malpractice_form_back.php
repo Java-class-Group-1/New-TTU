@@ -17,13 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Prepare SQL statement to insert form data into the database
-        $stmt = $conn->prepare("INSERT INTO malpractice_reports (student_index, student_name, student_department_id, course_code, supervisor_name, supervisor_department_id, supervisor_role, room_id, date_time, malpractice_type, student_image, item_seen, description) VALUES (:student_index, :student_name, :student_department_id, :course_code, :supervisor_name, :supervisor_department_id, :supervisor_role, :room_id, :date_time, :malpractice_type, :student_image, :item_seen, :description)");
+        $stmt = $conn->prepare("INSERT INTO malpractice_reports (student_index, student_name, student_department_id, course_code, supervisor_name, supervisor_department_id, supervisor_role, room_id, date_time, malpractice_type, student_image, item_seen, description) VALUES (:student_index, :student_name, :student_department_id, :courseCode, :supervisor_name, :supervisor_department_id, :supervisor_role, :room_id, :date_time, :malpractice_type, :student_image, :item_seen, :description)");
 
         // Bind parameters to the prepared statement
         $stmt->bindParam(':student_index', $_POST['studentIndex']);
         $stmt->bindParam(':student_name', $_POST['studentName']);
         $stmt->bindParam(':student_department_id', $_POST['Department_id']);
-        $stmt->bindParam(':course_code', $_POST['courseCode']);
+        $stmt->bindParam(':courseCode', $_POST['courseCode']);
         $stmt->bindParam(':supervisor_name', $_POST['supervisorName']);
         $stmt->bindParam(':supervisor_department_id', $_POST['supervisorDepartment']);
         $stmt->bindParam(':supervisor_role', $_POST['supervisorRole']);
