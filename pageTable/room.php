@@ -44,7 +44,7 @@ include("../include/sidebar.inc.php");
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title text-bg-danger text-center text-bold">Add Room</h4>
+                <h4 class="modal-title text-danger text-center text-bold">Add Room</h4>
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
             </div>
             
@@ -79,7 +79,7 @@ include("../include/sidebar.inc.php");
               
 
     <div class="container mt-5">
-    <h2 class="text-bg-danger text-center text-bold">Room Details </h2>
+    <h2 class="text-danger text-center text-bold">Room Details </h2>
 
         <div id="dataTableContainer"></div>
     </div>

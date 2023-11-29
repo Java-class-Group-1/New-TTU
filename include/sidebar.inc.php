@@ -85,6 +85,15 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="../pageTable/courses.php"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-relative-scale"></i
+                  ><span class="hide-menu">Courses</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="../pageTable/courselevel.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-relative-scale"></i
@@ -93,11 +102,20 @@
               </li>
               <li class="sidebar-item">
                 <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="../pageTable/Set exams.php"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-relative-scale"></i
+                  ><span class="hide-menu">Set Exams TTs</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
                   class="sidebar-link waves-effect waves-dark"
-                  href="../pageTable/rooms.php"
+                  href="../pageTable/exams.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-multiplication-box"></i
-                  ><span class="hide-menu">Exams TTs </span></a
+                  ><span class="hide-menu">View Exams TTs </span></a
                 >
                 <!-- <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
@@ -170,7 +188,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark"
-                  href="javascript:void(0)"
+                  href="../pageTable/Admin.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-relative-scale"></i
                   ><span class="hide-menu">Admin </span></a
@@ -194,7 +212,6 @@
               <li class="sidebar-item p-3">
                 <a
                   href="../pageTable/notice.php"
-                  target="_blank"
                   class="
                     w-100
                     btn btn-cyan
@@ -204,6 +221,21 @@
                     text-white
                   "
                   ><i class="mdi mdi-cloud-download font-20 me-2"></i>Notice from students
+                  </a
+                >
+              </li>
+              <li class="sidebar-item p-3">
+                <a
+                  href="../pageTable/rollover.php"
+                  class="
+                    w-100
+                    btn btn-danger
+                    btn-info
+                    d-flex
+                    align-items-center
+                    text-white
+                  "
+                  ><i class="mdi mdi-cloud-download font-20 me-2"></i>Roll Over
                   </a
                 >
               </li>

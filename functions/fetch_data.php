@@ -159,6 +159,7 @@ function fetchmainFacultyTables() {
         echo "Error: " . $e->getMessage();
     }
 }
+
 function fetchprogramTables() {
     global $conn;
 
@@ -219,11 +220,131 @@ function fetchprogramTables() {
     }
 }
 
+function fetchcoursesTables() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, coursename,department_id,faculty_id FROM courses");
+        $stmt->execute();
+        $facultyList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<table id='example' class='display' style='width:100%'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Course Name</th>       
+                        <th>Departments</th>
+                        <th>Faculty</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($facultyList as $faculty) {
+
+              // Fetch faculty name using faculty_id
+              $facultyId = $faculty['faculty_id'];
+              $facultyStmt = $conn->prepare("SELECT faculty_name FROM faculty WHERE id = :facultyId");
+              $facultyStmt->bindParam(':facultyId', $facultyId);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $facultyName = $facultyData['faculty_name'];
+
+              // Fetch faculty name using faculty_id
+              $DepID = $faculty['department_id'];
+              $facultyStmt = $conn->prepare("SELECT depart_name FROM department WHERE id = :department_id");
+              $facultyStmt->bindParam(':department_id', $DepID);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $DepName = $facultyData['depart_name'];
+
+            echo "<tr>
+            <td>{$faculty['id']}</td>
+            <td>{$faculty['coursename']}</td>
+            <td>{$DepName}</td>
+            <td>{$facultyName}</td>
+            
+            <td>
+            <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
+            <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
+        </td>
+     
+            </tr>";
+        }
+        // <a href='./../process/lectureDelete?{$faculty['id']}'>
+        // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
+    
+        echo "</tbody></table>";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+function fetchExamsables() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT day, date,course_id, course_level_id, program_id, department_id, faculty_id,session,
+        time_start, time_end,hall, invigilator_id, acdyr, sem FROM courses");
+        $stmt->execute();
+        $facultyList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<table id='example' class='display' style='width:100%'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Course Name</th>       
+                        <th>Departments</th>
+                        <th>Faculty</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($facultyList as $faculty) {
+
+              // Fetch faculty name using faculty_id
+              $facultyId = $faculty['faculty_id'];
+              $facultyStmt = $conn->prepare("SELECT faculty_name FROM faculty WHERE id = :facultyId");
+              $facultyStmt->bindParam(':facultyId', $facultyId);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $facultyName = $facultyData['faculty_name'];
+
+              // Fetch faculty name using faculty_id
+              $DepID = $faculty['department_id'];
+              $facultyStmt = $conn->prepare("SELECT depart_name FROM department WHERE id = :department_id");
+              $facultyStmt->bindParam(':department_id', $DepID);
+              $facultyStmt->execute();
+              $facultyData = $facultyStmt->fetch(PDO::FETCH_ASSOC);
+              $DepName = $facultyData['depart_name'];
+
+            echo "<tr>
+            <td>{$faculty['id']}</td>
+            <td>{$faculty['coursename']}</td>
+            <td>{$DepName}</td>
+            <td>{$facultyName}</td>
+            
+            <td>
+            <button class='btn btn-success editButton' data-id='{$faculty['id']}'>Edit</button>
+            <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button>
+        </td>
+     
+            </tr>";
+        }
+        // <a href='./../process/lectureDelete?{$faculty['id']}'>
+        // <button class='btn btn-danger deleteButton' data-id='{$faculty['id']}'>Delete</button></a></td>
+    
+        echo "</tbody></table>";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
 function fetchCourseTables() {
     global $conn;
 
     try {
-        $stmt = $conn->prepare("SELECT id, course_level, year, date FROM course_level");
+        $stmt = $conn->prepare("SELECT id, course_level,date FROM course_level");
         $stmt->execute();
         $facultyList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -232,18 +353,17 @@ function fetchCourseTables() {
                     <tr>
                         <th>ID</th>
                         <th>Course level</th>       
-                        <th>Year</th>
                         <th>Date</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>";
 
-        foreach ($facultyList as $course) {
+                foreach ($facultyList as $course) {
                 echo "<tr>
                 <td>{$course['id']}</td>
                 <td>{$course['course_level']}</td>
-                <td>{$course['year']}</td>
+            
                 <td>{$course['date']}</td>
                 <td>
                 <button class='btn btn-danger deleteButton' data-id='{$course['id']}'>Delete</button>
@@ -321,8 +441,11 @@ if (isset($_GET['action']) && $_GET['action'] === 'fetchCourseTable') {
 if (isset($_GET['action']) && $_GET['action'] === 'fetchRoomTable') {
     fetchRoomTables();
 }
+if (isset($_GET['action']) && $_GET['action'] === 'fetchcoursesTable') {
+    fetchcoursesTables();
+}
 
 
 
 // Add more functions for other database operations as needed.
-?>
+ 

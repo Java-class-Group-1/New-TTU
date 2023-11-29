@@ -18,6 +18,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    
     <script src="../public/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../public/dist/js/jquery.ui.touch-punch-improved.js"></script>
     <script src="../public/dist/js/jquery-ui.min.js"></script>

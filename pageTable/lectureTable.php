@@ -18,8 +18,9 @@ include("../include/sidebar.inc.php");
         }
 
         th {
-            background-color: lightblue; /* Change header color to light green */
-        }
+            background-color: blue; /* Change header color to light green */
+          color: #fff;
+          }
 
         th, td {
             border: 1px solid black; /* Add borders to table cells */
@@ -34,36 +35,20 @@ include("../include/sidebar.inc.php");
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Lecture</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Lecture</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                   
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+    
          <div class="container-fluid">
      
               <div class="card">
                 <div class="card-body">
 
-                  <button id="showFormButton" class="btn btn-primary">Add Faculty</button>
+      <button id="showFormButton" class="btn btn-primary">Add Lecture</button>
 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title text-bg-danger text-center text-bold">Add Faculty</h4>
+                <h4 class="modal-title text-danger text-center text-bold">Add Lecture</h4>
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
             </div>
             
@@ -126,7 +111,7 @@ include("../include/sidebar.inc.php");
 
             
     <div class="container mt-5">
-    <h2 class="text-bg-danger text-center text-bold">Lectures Details</h2>
+    <h2 class="text-danger text-center text-bold">Lectures Details</h2>
 
         <div id="dataTableContainer"></div>
     </div>

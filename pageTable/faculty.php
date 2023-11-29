@@ -16,7 +16,8 @@ include("../include/sidebar.inc.php");
         }
 
         th {
-            background-color: lightblue; /* Change header color to light green */
+          background-color: blue; /* Change header color to light green */
+          color: #fff;
         }
 
         th, td {
@@ -33,7 +34,7 @@ include("../include/sidebar.inc.php");
         <div class="card-body">
     
                 <div class="text-right">
-        <button type="button" class="btn btn-warning" data-bs-toggle="modal"       data-bs-target="#addFacultyModal">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal"       data-bs-target="#addFacultyModal">
           <i class="mdi mdi-account-key"></i> Add Faculty
         </button>
       </div>

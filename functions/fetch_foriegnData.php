@@ -33,12 +33,72 @@ function fetchDepartmentData() {
         return false;
     }
 }
+function fetchcoursesData() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, coursename FROM courses");
+        $stmt->execute();
+        $coursesList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $coursesList;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
+
+function fetchinvigilatorData() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, lec_name FROM lectures");
+        $stmt->execute();
+        $invigilator = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $invigilator;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
+
+
+function fetchprogramData() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, prog_name FROM program");
+        $stmt->execute();
+        $programList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $programList;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
+
+function fetchCourselevelData() {
+    global $conn;
+
+    try {
+        $stmt = $conn->prepare("SELECT id, course_level FROM course_level");
+        $stmt->execute();
+        $courselevelList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $courselevelList;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
 // You can add more functions for other database operations as needed.
 function fetchRoomData() {
     global $conn;
 
     try {
-        $stmt = $conn->prepare("SELECT id, room_name,location FROM room");
+        $stmt = $conn->prepare("SELECT id, room_name,location,room_size FROM room");
         $stmt->execute();
         $room = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

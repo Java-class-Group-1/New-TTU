@@ -17,7 +17,8 @@ include("../include/sidebar.inc.php");
         }
 
         th {
-            background-color: lightblue; /* Change header color to light green */
+            background-color: blue; /* Change header color to light green */
+          color: #fff;
         }
 
         th, td {
@@ -33,23 +34,7 @@ include("../include/sidebar.inc.php");
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <!-- <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-               <h4 class="page-title">Tables</h4> 
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Programs</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div> -->
+    
          <div class="container-fluid">
      
               <div class="card">
@@ -62,7 +47,7 @@ include("../include/sidebar.inc.php");
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title text-bg-danger text-center text-bold">Add Program</h4>
+                <h4 class="modal-title text-danger text-center text-bold">Add Program</h4>
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
             </div>
             
@@ -116,7 +101,7 @@ include("../include/sidebar.inc.php");
               
 
     <div class="container mt-5">
-    <h2 class="text-bg-danger text-center text-bold">Program Details </h2>
+    <h2 class="text-danger text-center text-bold">Program Details </h2>
 
         <div id="dataTableContainer"></div>
     </div>

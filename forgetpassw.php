@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <img src="public/assets/images/ttu.png" 
                         alt="login form" class="img-fluid" style="  width:90%;border-radius: 1rem 0 0 1rem;" />
-                        <h1 class="card-title text-center mb-4">Admin Forget Password</h1>
+                        <h1 class="card-title text-center text-uppercase mb-4">Admin Reset Password</h1>
                         <form id="forgetPasswordForm" method="POST">
                         <div class="alert-container"></div>
                             <div class="mb-3">
@@ -27,7 +27,7 @@
                                 <label for="adminUsername" class="form-label">Admin Username</label>
                                 <input type="text" id="adminUsername" name="adminUsername" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Reset Password</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Reset Password</button>
                         </form>
                         <p class="pb-lg-2  text-center" style="color: #393f81;">Do you remember your password? <a
                         href="index.php" style="color: red;"> Login Here!</a></p>

@@ -14,7 +14,8 @@ include("../include/sidebar.inc.php");
         }
 
         th {
-            background-color: lightblue; /* Change header color to light green */
+            background-color: blue; /* Change header color to light green */
+          color: #fff;
         }
 
         th, td {
@@ -119,7 +120,7 @@ include("../include/sidebar.inc.php");
                         if (response.trim() === "Data inserted successfully") {
                             $("#successMessage").html("<div class='alert alert-success text-center'>Data submitted successfully</div>");
                             $("#lectureForm")[0].reset();
-                            // $('#example').DataTable().ajax.reload();
+                            fetchAndDisplayData();
                         } else {
                             $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
                             $("#lectureForm")[0].reset();
