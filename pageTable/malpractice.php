@@ -3,11 +3,19 @@ include("../include/header.inc.php");
 include("../include/sidebar.inc.php");
 
 ?>
+<<<<<<< HEAD
+=======
+
+    
+ 
+
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
 <div class="page-wrapper">
         
         <div class="container-fluid">
         <div class="card">
             <div class="card-body">
+<<<<<<< HEAD
             <button id="showProgramFormButton" class="btn btn-primary">Add New Malpractice Form</button>
 
 <div class="modal fade" id="programModal">
@@ -31,12 +39,29 @@ include("../include/sidebar.inc.php");
                          
                             <div class="row mb-3">
                             <div class="col">
+=======
+            <h1 class="page-title text-center text-danger">MalPractice Form</h1>
+            <br><br>
+                <div class="malpractice-form">
+                    <form method="POST" id="malpracticeForm" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <div id="formMessage"></div>
+                            <div class="col-md-6">
+                                <label for="studentIndex" class="form-label">Student Index Number:</label>
+                                <input type="text" class="form-control" id="studentIndex" name="studentIndex" placeholder="Student Index" required>
+                            </div>
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="studentName" class="form-label">Student Name:</label>
                                 <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Student name" required>
                             </div>
                         </div>
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <div class="col">
+=======
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="studentDepartment" class="form-label">Student Department:</label>
                                 <select class="form-select" id="Department_id" name="Department_id" required>
                               <option value="" selected disabled>Select Department</option>
@@ -52,19 +77,31 @@ include("../include/sidebar.inc.php");
                           </select>
                             
                               </div>
+<<<<<<< HEAD
                               <div class="row mb-3">
                             <div class="col">
+=======
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="courseCode" class="form-label">Course Code:</label>
                                 <input type="text" class="form-control" id="courseCode" name="courseCode" placeholder="Course code" required>
                             </div>
                         </div>
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <div class="col">
                                 <label for="supervisorName" class="form-label">Supervisor Name:</label>
                                 <input type="text" class="form-control" id="supervisorName" name="supervisorName" placeholder="Supervisor's Name" required>
                             </div>
                             <div class="row mb-3">
                             <div class="col">
+=======
+                            <div class="col-md-6">
+                                <label for="supervisorName" class="form-label">Supervisor Name:</label>
+                                <input type="text" class="form-control" id="supervisorName" name="supervisorName" placeholder="Supervisor's Name" required>
+                            </div>
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="supervisorDepartment" class="form-label">Supervisor Department:</label>
                                 <select class="form-select" id="supervisorDepartment" name="supervisorDepartment" required>
         <option value="" selected disabled>Select Department</option>
@@ -80,12 +117,20 @@ include("../include/sidebar.inc.php");
                               </div>
                         </div>
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <div class="col">
                                 <label for="supervisorRole" class="form-label">Supervisor Role/Position:</label>
                                 <input type="text" class="form-control" id="supervisorRole" name="supervisorRole" placeholder="Supervisor's role" required>
                             </div>
                             <div class="row mb-3">
                             <div class="col">
+=======
+                            <div class="col-md-6">
+                                <label for="supervisorRole" class="form-label">Supervisor Role/Position:</label>
+                                <input type="text" class="form-control" id="supervisorRole" name="supervisorRole" placeholder="Supervisor's role" required>
+                            </div>
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="room" class="form-label">Room where Incident Happened:</label>
                                 <select class="form-select" id="room" name="room" required>
         <?php
@@ -100,12 +145,20 @@ include("../include/sidebar.inc.php");
                             </div>
                         </div>
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <div class="col">
                                 <label for="dateTime" class="form-label">Date and Time of Incident:</label>
                                 <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" placeholder="date and time of incident" required>
                             </div>
                             <div class="row mb-3">
                             <div class="col">
+=======
+                            <div class="col-md-6">
+                                <label for="dateTime" class="form-label">Date and Time of Incident:</label>
+                                <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" placeholder="date and time of incident" required>
+                            </div>
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="malpracticeType" class="form-label">Malpractice Type:</label>
                                 <select class="form-select" id="malpracticeType" name="malpracticeType" required>
                                     <option value="" selected disabled>Select Malpractice Type</option>
@@ -116,7 +169,11 @@ include("../include/sidebar.inc.php");
                             </div>
                         </div>
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <div class="col">
+=======
+                            <div class="col-md-6">
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                                 <label for="studentImage" class="form-label">Upload Student's Image:</label>
                                 <input type="file" class="form-control" id="studentImage" name="studentImage" accept="image/*" required>
                             </div>
@@ -134,10 +191,16 @@ include("../include/sidebar.inc.php");
                             </div>
                         </div>
                         <div class="">
+<<<<<<< HEAD
                     
                                 <button type="submit" class="btn btn-danger ">Submit Report</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         
+=======
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-outline-danger btn-lg">Submit Malpractice Report</button>
+                            </div>
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                         </div>
                     </form>
                 </div>
@@ -145,6 +208,7 @@ include("../include/sidebar.inc.php");
         </div>
     </div>
  
+<<<<<<< HEAD
             </div>
         </div>
     </div>
@@ -166,6 +230,15 @@ include("../include/sidebar.inc.php");
                 $("#programModal").modal("show");
             });
 
+=======
+
+<!-- Your HTML code with form -->
+<!-- Including necessary libraries -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
         $('#malpracticeForm').submit(function(event) {
             event.preventDefault(); // Prevent default form submission
 

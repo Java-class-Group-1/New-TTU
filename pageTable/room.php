@@ -44,7 +44,11 @@ include("../include/sidebar.inc.php");
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
+<<<<<<< HEAD
                 <h4 class="modal-title text-danger text-center text-bold">Add Room</h4>
+=======
+                <h4 class="modal-title text-bg-danger text-center text-bold">Add Room</h4>
+>>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
             </div>
             
