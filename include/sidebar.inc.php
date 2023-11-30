@@ -55,7 +55,7 @@
 
               <li class="sidebar-item">
                 <a  class="sidebar-link waves-effect waves-dark"
-                  href="form-basic.html"
+                  href="../pageTable/class TTs.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-receipt"></i
                   ><span class="hide-menu">Class Time Table </span></a

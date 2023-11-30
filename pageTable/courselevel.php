@@ -140,9 +140,33 @@ $('#dataTableContainer').on('click', '.deleteButton', function() {
     var courseID = $(this).data('id');
 
     if (confirm("Are you sure you want to delete this item?")) {
+    
         $.ajax({
             type: 'GET',
             url: "../process/CourseDelete.php",
+            data: { id: courseID },
+            success: function(response) {
+                alert(response);
+                fetchAndDisplayData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    } else {
+        // Action canceled
+        console.log("Deletion canceled");
+    }
+});
+
+            // Edit button click event
+$('#dataTableContainer').on('click', '.editButton', function() {
+    var courseID = $(this).data('id');
+
+    if (confirm("Are you sure you want to delete this item?")) {
+        $.ajax({
+            type: 'GET',
+            url: "../process/CourseDeletess.php",
             data: { id: courseID },
             success: function(response) {
                 alert(response);

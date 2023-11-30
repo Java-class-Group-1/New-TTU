@@ -172,6 +172,30 @@ $('#dataTableContainer').on('click', '.deleteButton', function() {
     }
 });
 
+            // Edit button click event
+$('#dataTableContainer').on('click', '.editButton', function() {
+    var facultyId = $(this).data('id');
+ 
+    if (confirm("Are you sure you want to delete this item?")) {
+        $.ajax({
+            type: 'GET',
+            url: "../process/facultyDeletess.php",
+          data: { id: facultyId }, // Corrected 'id' parameter
+            success: function(response) {
+                alert(response);
+              
+                fetchAndDisplayData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    } else {
+        // Action canceled
+        console.log("Deletion canceled");
+    }
+});
+
 
       // Call function to fetch and display data on page load
       fetchAndDisplayData();

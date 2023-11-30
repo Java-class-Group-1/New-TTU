@@ -171,10 +171,13 @@ include("../include/sidebar.inc.php");
                     success: function(response) {
                         // Display success message or handle response
                         $('#formMessage').html('<div class="alert text-center alert-success">Form report submitted successfully!</div>');
+                        $("#malpracticeForm")[0].reset();
+                    
                     },
                     error: function(xhr, textStatus, errorThrown) {
                         // Handle errors or display error message
                         $('#formMessage').html('<div class="alert alert-danger">Error submitting report. Please try again.</div>');
+                        $("#malpracticeForm")[0].reset();
                     }
                 });
             }

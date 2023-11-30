@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $existingStmt->bindParam(':course_taught', $course_taught);
         $existingStmt->bindParam(':Department_id', $Department_id);
         $existingStmt->execute();
-
         $existingRecord = $existingStmt->fetch(PDO::FETCH_ASSOC);
 
         if ($existingRecord) {

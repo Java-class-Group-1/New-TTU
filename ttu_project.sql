@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 05:46 PM
+-- Generation Time: Nov 30, 2023 at 11:30 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -244,8 +244,7 @@ INSERT INTO `department` (`id`, `depart_name`, `faculty_id`, `date`) VALUES
 (22, 'Media and Communication', 4, '2023-11-18 08:00:20'),
 (23, 'Sci Lab Tech', 5, '2023-11-18 08:00:20'),
 (24, 'Medical Lab', 5, '2023-11-18 08:07:53'),
-(25, 'Dispensary', 5, '2023-11-18 08:07:53'),
-(33, 'ike mee', 1, '2023-11-27 08:44:00');
+(25, 'Dispensary', 5, '2023-11-18 08:07:53');
 
 -- --------------------------------------------------------
 
@@ -270,6 +269,7 @@ CREATE TABLE `exams` (
   `invigilator_id` int(11) DEFAULT NULL,
   `acdyr` text NOT NULL,
   `sem` text NOT NULL,
+  `seen` enum('N','S') NOT NULL,
   `datesend` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -277,18 +277,22 @@ CREATE TABLE `exams` (
 -- Dumping data for table `exams`
 --
 
-INSERT INTO `exams` (`id`, `day`, `date`, `course_id`, `course_level_id`, `program_id`, `department_id`, `faculty_id`, `session`, `time_start`, `time_end`, `students`, `hall`, `invigilator_id`, `acdyr`, `sem`, `datesend`) VALUES
-(1, 'Tuesday', '2023-11-09', 1, 5, 17, 5, 2, 'THIRD SESSION', '19:33:00', '12:30:00', 10, 'OB FF6', 8, '2023/2024', 'sem 1', '2023-11-28 16:30:35'),
-(2, 'Tuesday', '2023-11-01', 2, 18, 3, 3, 2, 'SECOND SESSION', '05:05:00', '11:06:00', 20, 'OB FF5', 8, '2023/2024', 'sem 1', '2023-11-29 02:02:23'),
-(3, 'Thursday', '2023-11-10', 1, 16, 1, 1, 3, 'THIRD SESSION', '07:00:00', '10:00:00', 37, 'Roof Top', 7, '2023/2024', 'sem 1', '2023-11-29 02:10:06'),
-(4, 'Monday', '2023-11-09', 1, 2, 1, 1, 1, 'FIRST SESSION', '10:00:00', '13:00:00', 10, 'Drawing RM', 2, '2023/2024', 'sem 1', '2023-11-29 02:12:09'),
-(5, 'Wednesday', '2023-11-06', 2, 19, 19, 16, 2, 'THIRD SESSION', '11:02:00', '17:00:00', 50, 'OB FF5', 7, '2023/2024', 'sem 1', '2023-11-29 02:54:51'),
-(6, 'Thursday', '2023-11-01', 2, 17, 22, 18, 1, 'FOURTH SESSION', '08:09:00', '10:00:00', 10, 'OB FF4', 9, '2023/2024', 'sem 1', '2023-11-29 03:00:04'),
-(7, 'Wednesday', '2023-11-15', 2, 18, 18, 15, 3, 'FOURTH SESSION', '06:02:00', '08:04:00', 10, 'OB FF4', 6, '2023/2024', 'sem 1', '2023-11-29 03:01:26'),
-(8, 'Tuesday', '2023-11-16', 2, 17, 15, 18, 4, 'THIRD SESSION', '07:22:00', '07:22:00', 79, 'Drawing RM', 6, '2023/2024', 'sem 1', '2023-11-29 03:18:52'),
-(9, 'Wednesday', '2023-11-10', 2, 17, 21, 18, 4, 'THIRD SESSION', '00:43:00', '02:45:00', 98, 'TF1', 6, '2023/2024', 'sem 1', '2023-11-29 10:41:45'),
-(10, 'Friday', '2023-11-16', 4, 4, 18, 2, 3, 'THIRD SESSION', '18:00:00', '21:04:00', 55, 'OB FF1', 3, '2023/2024', 'sem 1', '2023-11-29 15:58:37'),
-(11, 'Tuesday', '2023-11-10', 6, 4, 16, 3, 3, 'THIRD SESSION', '20:08:00', '19:07:00', 50, 'OB FF3', 4, '2023/2024', 'sem 1', '2023-11-29 16:05:07');
+INSERT INTO `exams` (`id`, `day`, `date`, `course_id`, `course_level_id`, `program_id`, `department_id`, `faculty_id`, `session`, `time_start`, `time_end`, `students`, `hall`, `invigilator_id`, `acdyr`, `sem`, `seen`, `datesend`) VALUES
+(1, 'Tuesday', '2023-11-09', 1, 5, 17, 5, 2, 'THIRD SESSION', '19:33:00', '12:30:00', 10, 'OB FF6', 8, '2023/2024', 'sem 1', 'N', '2023-11-28 16:30:35'),
+(2, 'Tuesday', '2023-11-01', 2, 18, 3, 3, 2, 'SECOND SESSION', '05:05:00', '11:06:00', 20, 'OB FF5', 8, '2023/2024', 'sem 1', 'N', '2023-11-29 02:02:23'),
+(3, 'Thursday', '2023-11-10', 1, 16, 1, 1, 3, 'THIRD SESSION', '07:00:00', '10:00:00', 37, 'Roof Top', 7, '2023/2024', 'sem 1', 'N', '2023-11-29 02:10:06'),
+(4, 'Monday', '2023-11-09', 1, 2, 1, 1, 1, 'FIRST SESSION', '10:00:00', '13:00:00', 10, 'Drawing RM', 2, '2023/2024', 'sem 1', 'N', '2023-11-29 02:12:09'),
+(5, 'Wednesday', '2023-11-06', 2, 19, 19, 16, 2, 'THIRD SESSION', '11:02:00', '17:00:00', 50, 'OB FF5', 7, '2023/2024', 'sem 1', 'N', '2023-11-29 02:54:51'),
+(6, 'Thursday', '2023-11-01', 2, 17, 22, 18, 1, 'FOURTH SESSION', '08:09:00', '10:00:00', 10, 'OB FF4', 9, '2023/2024', 'sem 1', 'N', '2023-11-29 03:00:04'),
+(7, 'Wednesday', '2023-11-15', 2, 18, 18, 15, 3, 'FOURTH SESSION', '06:02:00', '08:04:00', 10, 'OB FF4', 6, '2023/2024', 'sem 1', 'N', '2023-11-29 03:01:26'),
+(8, 'Tuesday', '2023-11-16', 2, 17, 15, 18, 4, 'THIRD SESSION', '07:22:00', '07:22:00', 79, 'Drawing RM', 6, '2023/2024', 'sem 1', 'N', '2023-11-29 03:18:52'),
+(9, 'Wednesday', '2023-11-10', 2, 17, 21, 18, 4, 'THIRD SESSION', '00:43:00', '02:45:00', 98, 'TF1', 6, '2023/2024', 'sem 1', 'N', '2023-11-29 10:41:45'),
+(10, 'Friday', '2023-11-16', 4, 4, 18, 2, 3, 'THIRD SESSION', '18:00:00', '21:04:00', 55, 'OB FF1', 3, '2023/2024', 'sem 1', 'N', '2023-11-29 15:58:37'),
+(11, 'Tuesday', '2023-11-10', 6, 4, 16, 3, 3, 'THIRD SESSION', '20:08:00', '19:07:00', 50, 'OB FF3', 4, '2023/2024', 'sem 1', 'N', '2023-11-29 16:05:07'),
+(12, 'Wednesday', '2023-11-08', 16, 19, 20, 12, 4, 'THIRD SESSION', '06:39:00', '05:39:00', 49, 'Restaurant 2', 7, '2023/2024', 'sem 1', 'N', '2023-11-30 01:37:23'),
+(13, 'Tuesday', '2023-11-08', 28, 12, 14, 9, 4, 'THIRD SESSION', '19:00:00', '21:00:00', 50, 'OB FF3', 9, '2023/2024', 'sem 1', 'N', '2023-11-30 04:21:06'),
+(14, 'Sunday', '2023-11-28', 29, 10, 12, 12, 4, 'THIRD SESSION', '18:00:00', '21:00:00', 80, 'Drawing RM', 7, '2023/2024', 'sem 1', 'N', '2023-11-30 04:32:06'),
+(15, 'Thursday', '2023-11-12', 14, 5, 19, 8, 4, 'SECOND SESSION', '09:38:00', '10:39:00', 50, 'OB FF2', 11, '2023/2024', 'sem 1', 'N', '2023-11-30 06:36:10');
 
 -- --------------------------------------------------------
 
@@ -308,12 +312,11 @@ CREATE TABLE `faculty` (
 --
 
 INSERT INTO `faculty` (`id`, `faculty_name`, `names_of_departments`, `date`) VALUES
-(1, 'Engineering', '5', '2023-11-13'),
-(2, 'Built and Natural Environment', '3', '2023-11-18'),
-(3, 'Business and Management Studies', '4', '2023-11-19'),
-(4, 'Applied Art and Technology', '7', '2023-11-19'),
-(5, 'Applied Sciences ', '7', '2023-11-19'),
-(23, 'APPLIED ARTS rate', 'APPLIED ARTS rateAPPLIED ARTS rateAPPLIED ARTS rateAPPLIED ARTS rateAPPLIED ARTS rateAPPLIED ARTS rateAPPLIED ARTS rate', '2023-11-27');
+(1, 'Engineering', 'Civil, Mechanical Eng., Electrical,Processing,Petroleum', '2023-11-13'),
+(2, 'Built and Natural Environment', 'Renewable Energy, Interior Design, Estate Management,Building,Plumbing,Welding', '2023-11-18'),
+(3, 'Business and Management Studies', 'Accountancy, Marketing, Purchasing and Supp,Secretaryship', '2023-11-19'),
+(4, 'Applied Art and Technology', 'Graphics, Textiles, Painting,Sculpture,Ceramics,Fashion,Media and Comm', '2023-11-19'),
+(5, 'Applied Sciences ', 'Hospitality, Maths and Statistics, Medical Lab,Dipensary,Tourism,ICT,Science Lab', '2023-11-19');
 
 -- --------------------------------------------------------
 
@@ -342,7 +345,11 @@ INSERT INTO `lectures` (`id`, `lec_name`, `phone`, `course_taught`, `Faculty_id`
 (6, 'Mr. Isaac', '087456789009', 'Java', 5, 16, '2023-11-17'),
 (7, 'Mr. Bright Otchere', '0245684840', 'Computer Hardware', 3, 2, '2023-11-23'),
 (8, 'Nana Botwe ', '0249705330', 'Computer Software ', 4, 8, '2023-11-09'),
-(9, 'Nana Botwe Banson', '0550100160', 'Computer Science ', 3, 7, '2023-11-08');
+(9, 'Nana Botwe Banson', '0550100160', 'Computer Science ', 3, 7, '2023-11-08'),
+(10, 'Albert Hayman', '0550100160', 'Analytical chemistry IV practical', 5, 5, '2023-11-15'),
+(11, 'Bright Haynon', '024565489', 'Computer Graphics', 3, 10, '2023-11-16'),
+(12, 'Albert Hayman', '0550100160', 'Operating Systems', 5, 6, '2023-11-21'),
+(13, 'Albert Hayman', '0550100160', 'Operating Systems', 5, 5, '2023-11-07');
 
 -- --------------------------------------------------------
 
@@ -375,7 +382,10 @@ INSERT INTO `malpractice_reports` (`id`, `student_index`, `student_name`, `stude
 (2, '07150001152', 'Nana Beeeeeeeee', 'Marketing and Strategy', 'IT102', 'Mr. Akoto', 'Ceramics Technology', 'Chief', 'OB FF4', '2023-11-20 15:08:00', 'Using Unauthorized Materials', '../mypic/Bishop.jpg', 'sdfsdf', 'sdfds'),
 (3, '084522653355', 'Faith Dogbe', 'Tourism Management', 'IT102', 'Mr. Akoto', 'Hospitality Management', 'Chief', 'Interior Design Studio A / B', '2023-11-14 19:16:00', 'Using Unauthorized Materials', '../mypic/roadmap.png', 'bad', 'baddddddddd'),
 (4, '07150001152', 'FGNFGNFGNGF', 'Civil Engineering', 'IT102', 'Mr. Akoto', 'Industrial and Health Science', 'Chief', 'Painting Studio', '2023-11-14 21:53:00', 'Impersonation', '../mypic/Untitled design.png', 'GFNNGFG', 'GNGNGNF'),
-(5, '6544356345354', 'gfhfgh', 'Civil Engineering', 'Analytical chemistry IV practical', 'fgvfdgdf', 'Graphic Design Technology', 'fghfghgf', 'OB FF5', '2023-11-16 02:38:00', 'Impersonation', '../mypic/portrait-young-successful-african-business-lady-white.jpg', 'fdgfdhg', 'dfgfdgfdgd');
+(5, '6544356345354', 'gfhfgh', 'Civil Engineering', 'Analytical chemistry IV practical', 'fgvfdgdf', 'Graphic Design Technology', 'fghfghgf', 'OB FF5', '2023-11-16 02:38:00', 'Impersonation', '../mypic/portrait-young-successful-african-business-lady-white.jpg', 'fdgfdhg', 'dfgfdgfdgd'),
+(6, '07150001152', 'Nana Beeeeeeeee', 'Mechanical Engineering - Plant and Production', 'Computer Graphics', 'Mr. Akoto', 'Mechanical Engineering - Plant and Production', 'Chief', 'Painting Studio', '2023-11-21 06:50:00', 'Impersonation', '../mypic/Bishop.jpg', 'BADDDD', 'BADDD'),
+(7, '0718000152', 'Emame', 'Mechanical Engineering - Plant and Production', 'Hardware Technology', 'Mr. Akoto', 'Procurement and Supply', 'Chief', 'Room 5A', '2023-11-21 06:50:00', 'Using Unauthorized Materials', '../mypic/Bishop.jpg', 'BADDDD', 'BADDD'),
+(8, '071080004', 'Nana Beee', 'Mathematics and Statistics', 'Intro. Accounting', 'Sir Ben', 'Graphic Design Technology', 'Chief', 'Painting Studio', '2023-11-14 07:00:00', 'Impersonation', '../mypic/Bishop.jpg', 'Bandii', 'bad');
 
 -- --------------------------------------------------------
 
@@ -456,7 +466,8 @@ INSERT INTO `program` (`id`, `prog_name`, `department_id`, `faculty_id`, `date`)
 (29, 'Mecha. Engineering - Prod.', 1, 1, '2023-11-18 12:38:48'),
 (30, 'Plumbing', 2, 2, '2023-11-18 12:41:51'),
 (36, 'Software Testing soft', 2, 5, '2023-11-27 08:46:07'),
-(37, 'ikoppp', 3, 4, '2023-11-28 08:50:33');
+(37, 'ikoppp', 3, 4, '2023-11-28 08:50:33'),
+(38, 'Information Technology', 1, 5, '2023-11-30 04:03:08');
 
 -- --------------------------------------------------------
 
@@ -557,7 +568,8 @@ INSERT INTO `room` (`id`, `room_name`, `room_size`, `location`, `date`) VALUES
 (59, 'HCIM Conf. RM', 40, 'Main Campus', '2023-11-18'),
 (60, 'Restaurant 1', 50, 'Main Campus', '2023-11-18'),
 (61, 'Restaurant 2', 50, 'Main Campus', '2023-11-18'),
-(62, 'Restaurant 3', 50, 'Main Campus', '2023-11-18');
+(62, 'Restaurant 3', 50, 'Main Campus', '2023-11-18'),
+(66, 'FFT456', 400, 'Applied Arts', '2023-11-30');
 
 -- --------------------------------------------------------
 
@@ -598,7 +610,7 @@ INSERT INTO `students` (`id`, `name`, `department`, `faculty_id`, `department_id
 (4, 'Emma Brown', 'Hospitality Management', 2, NULL),
 (5, 'Michael Wilson', 'Tourism Management', 1, NULL),
 (6, 'Emma Brown', 'Civil Engineering', 3, NULL),
-(7, 'Michael Wilson', 'Civil Engineering', 4, NULL);
+(7, 'Michael Wilson', 'Hospitality Management', 4, NULL);
 
 --
 -- Indexes for dumped tables
@@ -751,25 +763,25 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `lectures`
 --
 ALTER TABLE `lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `malpractice_reports`
 --
 ALTER TABLE `malpractice_reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `notice`
@@ -781,7 +793,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `rollover`
@@ -793,7 +805,7 @@ ALTER TABLE `rollover`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `sessions`

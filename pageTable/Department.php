@@ -122,7 +122,7 @@ include("../include/sidebar.inc.php");
                             $("#lectureForm")[0].reset();
                             fetchAndDisplayData();
                         } else {
-                            $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
+                            $("#successMessage").html("<div class='alert alert-danger'>Error: Department with the same name is already in the system</div>");
                             $("#lectureForm")[0].reset();
                         }
                     }
@@ -158,6 +158,29 @@ $('#dataTableContainer').on('click', '.deleteButton', function() {
             type: 'GET',
             url: "../process/DepartmentDelete.php",
             data: { id: departmentID },
+            success: function(response) {
+                alert(response);
+                fetchAndDisplayData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    } else {
+        // Action canceled
+        console.log("Deletion canceled");
+    }
+});
+
+        // Edit button click event
+$('#dataTableContainer').on('click', '.editButton', function() {
+    var facultyId = $(this).data('id');
+
+    if (confirm("Are you sure you want to delete this item?")) {
+        $.ajax({
+            type: 'GET',
+            url: "../process/lecterDeletess.php",
+            data: { id: facultyId },
             success: function(response) {
                 alert(response);
                 fetchAndDisplayData();

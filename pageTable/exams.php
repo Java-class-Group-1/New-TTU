@@ -51,8 +51,11 @@ include("../include/sidebar.inc.php");
         <!-- Form to enter student details and calculate fees -->
 <!-- <button class="btn btn-primary" id="showDataButton">Show Data</button> -->
 <button type="button" class="btn btn-primary" id="showDataButton">Show Data</button>
-
 </form>
+
+<button type="button" class="btn btn-danger" style="float: right" id="showTimetable">Click Me</button>
+<br><br>
+<div id="showst" style="float: right"></div>
 
 
 <!-- Add a container for the length menu -->
@@ -79,14 +82,14 @@ include("../include/sidebar.inc.php");
                     
                         <th>Department </th>
                         <th>Faculty </th>
-                        <th>Session</th>
                         <th>Time Set</th>
+                        <th>Session</th>
                                           
                         <th>Hall</th>
                         <th>Invigilator </th>
                         <th>Academic Year</th>
                         <th>Semester</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -164,11 +167,51 @@ dataTable.on('xhr', function () {
         $('#showDataButton').on('click', function () {
             dataTable.ajax.reload();
         });
+    
         // Handle changes to the length menu select
             $('#inputGroupSelect01').on('change', function () {
                 dataTable.page.len($(this).val()).draw();
             });
- 
+            
+            $('#showTimetable').on('click', function () {
+
+            // Get the reference to the div element
+            const myDiv = document.getElementById('showst');
+            const myshow = document.getElementById('showTimetable');
+
+            // Change the color and background
+            myDiv.style.color = 'red'; // Change text color to white
+            myDiv.style.backgroundColor = 'yellow';
+
+            // myDiv.innerHTML = "Student can see Time Table 2";
+            // myshow.innerHTML = "Show Time Table";
+        $.ajax({
+          type: "POST",
+          url: "../process/setvisible_back.php",
+          success: function (response) {
+            if (response.trim() === "Data Updated successfully") {
+              // Display success message
+    
+             setTimeout(function () {
+                myDiv.innerHTML = "Student can see Time Table";
+             myshow.innerHTML = "Show Time Table";
+                        }, 3000);
+                
+            } else {
+              // Display error message
+              setTimeout(function () {
+                myDiv.innerHTML = "Student can not see Time Table";
+             myshow.innerHTML = "Hide Time Table";
+                        }, 3000);
+                    }
+
+            }
+        
+        });
+        });
+
+
+
 
   </script>
 <?php 

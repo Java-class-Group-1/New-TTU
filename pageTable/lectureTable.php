@@ -66,15 +66,27 @@ include("../include/sidebar.inc.php");
                 </div> 
                 <div class="mb-3">
                     <label for="course_taught" class="form-label">Course Taught</label>
-                    <input type="text" class="form-control" id="course_taught" name="course_taught" required>
+                    <!-- <input type="text" class="form-control" id="" name="" required> -->
+                    <select class="form-select" id="course_taught" name="course_taught" required>
+        <option value="" selected disabled>Select Course</option>
+        <?php
+        include('../functions/fetch_foriegnData.php'); // Assuming fetch_data.php contains the necessary code to fetch faculty data
+
+        $departmentList = fetchcoursesData(); // Assuming fetchFacultyData is a function in fetch_data.php
+
+        foreach ($departmentList as $department) {
+            echo "<option value='{$department['coursename']}'>{$department['coursename']}</option>";
+        }
+        ?>
+    </select>
+            
                 </div>
                 <div class="mb-3">
                     <label for="Department_id" class="form-label">Department</label>
                     <select class="form-select" id="Department_id" name="Department_id" required>
         <option value="" selected disabled>Select Department</option>
         <?php
-        include('../functions/fetch_foriegnData.php'); // Assuming fetch_data.php contains the necessary code to fetch faculty data
-
+        
         $departmentList = fetchDepartmentData(); // Assuming fetchFacultyData is a function in fetch_data.php
 
         foreach ($departmentList as $department) {
@@ -141,7 +153,7 @@ include("../include/sidebar.inc.php");
 
         $.ajax({
             type: "POST",
-            url: "../process/faculty_back.php",
+            url: "../process/lecture_back.php",
             data: $("#lectureForm").serialize(),
             success: function(response) {
                 if (response.trim() === "Data inserted successfully") {
@@ -155,7 +167,7 @@ include("../include/sidebar.inc.php");
                     $('#lectureForm').DataTable().ajax.reload();
                 } else {
                     // Display error message
-                    $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
+                    $("#successMessage").html("<div class='alert alert-danger'>Error: Lecture with the course in the same Department is already in the system</div>");
                     $("#lectureForm")[0].reset();
                 }
                  
@@ -184,36 +196,59 @@ include("../include/sidebar.inc.php");
     
 
     // Submit form data via AJAX
-    $("#lectureForm").submit(function(event) {
-      event.preventDefault();
-      $.ajax({
-        type: "POST",
-        url: "../process/lecture_back.php",
-        data: $("#lectureForm").serialize(),
-        success: function(response) {
-          if (response.trim() === "Data inserted successfully") {
-            $("#successMessage").html("<div class='alert alert-success text-center'>Data submitted successfully</div>");
-            $("#lectureForm")[0].reset();
-            fetchAndDisplayData(); // Reload table data
-          } else {
-            $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
-          }
-        }
-      });
-    });
+    // $("#lectureForm").submit(function(event) {
+    //   event.preventDefault();
+    //   $.ajax({
+    //     type: "POST",
+    //     url: "../process/lecture_back.php",
+    //     data: $("#lectureForm").serialize(),
+    //     success: function(response) {
+    //       if (response.trim() === "Data inserted successfully") {
+    //         $("#successMessage").html("<div class='alert alert-success text-center'>Data submitted successfully</div>");
+    //         $("#lectureForm")[0].reset();
+    //         fetchAndDisplayData(); // Reload table data
+    //       } else {
+    //         $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
+    //       }
+    //     }
+    //   });
+    // });
 
     // Initial DataTable setup on page load
     fetchAndDisplayData();
 
 
         // Delete button click event
-        $('#dataTableContainer').on('click', '.deleteButton', function() {
+    $('#dataTableContainer').on('click', '.deleteButton', function() {
     var facultyId = $(this).data('id');
 
     if (confirm("Are you sure you want to delete this item?")) {
         $.ajax({
             type: 'GET',
             url: "../process/lecterDelete.php",
+            data: { id: facultyId },
+            success: function(response) {
+                alert(response);
+                fetchAndDisplayData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    } else {
+        // Action canceled
+        console.log("Deletion canceled");
+    }
+});
+
+        // Edit button click event
+    $('#dataTableContainer').on('click', '.editButton', function() {
+    var facultyId = $(this).data('id');
+
+    if (confirm("Are you sure you want to delete this item?")) {
+        $.ajax({
+            type: 'GET',
+            url: "../process/lecterDeletess.php",
             data: { id: facultyId },
             success: function(response) {
                 alert(response);

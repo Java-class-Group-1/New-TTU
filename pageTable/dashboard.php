@@ -378,10 +378,10 @@ include("../include/sidebar.inc.php");
                   <li class="d-flex no-block card-body">
                     <i class="mdi mdi-check-circle fs-4 w-30px mt-1"></i>
                     <div>
-                      <a href="#" class="mb-0 font-medium p-0"
+                      <!-- <a href="#" class="mb-0 font-medium p-0"
                         >Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit.</a
-                      >
+                      > 
                       <span class="text-muted"
                         >dolor sit amet, consectetur adipiscing</span
                       >
@@ -459,7 +459,7 @@ include("../include/sidebar.inc.php");
                     <div class="ms-auto">
                       <div class="tetx-right">
                         <h5 class="text-muted mb-0">15</h5>
-                        <span class="text-muted font-16">Jan</span>
+                        <span class="text-muted font-16">Jan</span>-->
                       </div>
                     </div>
                   </li>

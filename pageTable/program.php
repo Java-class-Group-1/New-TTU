@@ -129,12 +129,13 @@ include("../include/sidebar.inc.php");
                     url: "../process/program_back.php",
                     data: $("#programForm").serialize(),
                     success: function(response) {
-                        if (response) {
+                    
+                        if (response.trim() === "Success") {
                             $("#successMessage").html("<div class='alert alert-success text-center'>Data submitted successfully</div>");
                             $("#programForm")[0].reset();
                             fetchAndDisplayData();
                         } else {
-                            $("#successMessage").html("<div class='alert alert-danger'>Error: Data not sent</div>");
+                            $("#successMessage").html("<div class='alert alert-danger'>Error: Data with the same program is in the system</div>");
                             $("#programForm")[0].reset();
                         }
                     }
@@ -167,6 +168,29 @@ $('#dataTableContainer').on('click', '.deleteButton', function() {
         $.ajax({
             type: 'GET',
             url: "../process/programDelete.php",
+            data: { id: programId },
+            success: function(response) {
+                alert(response);
+                fetchAndDisplayData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    } else {
+        // Action canceled
+        console.log("Deletion canceled");
+    }
+});
+
+            // Edit button click event
+$('#dataTableContainer').on('click', '.editButton', function() {
+    var programId = $(this).data('id');
+
+    if (confirm("Are you sure you want to delete this item?")) {
+        $.ajax({
+            type: 'GET',
+            url: "../process/programDeletesss.php",
             data: { id: programId },
             success: function(response) {
                 alert(response);

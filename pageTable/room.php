@@ -44,11 +44,11 @@ include("../include/sidebar.inc.php");
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-<<<<<<< HEAD
+
                 <h4 class="modal-title text-danger text-center text-bold">Add Room</h4>
-=======
-                <h4 class="modal-title text-bg-danger text-center text-bold">Add Room</h4>
->>>>>>> 7b97636344d05ac5557ff0f2eb5d4924f6768fc8
+
+                <!-- <h4 class="modal-title text-bg-danger text-center text-bold">Add Room</h4> -->
+
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
             </div>
             
@@ -67,7 +67,22 @@ include("../include/sidebar.inc.php");
                     </div>
                     <div class="mb-3">
                         <label for="location" class="form-label">Room Location</label>
-                        <input type="text" class="form-control" id="location" name="location" required>
+            <!-- <input type="text" class="form-control" id="" name="location" required> -->
+                
+                <select class="form-select" id="location" name="location" required>
+        <option value="" selected disabled>Select Course</option>
+        <?php
+        include('../functions/fetch_foriegnData.php'); // Assuming fetch_data.php contains the necessary code to fetch faculty data
+
+        $departmentList = fetchRoomData(); // Assuming fetchFacultyData is a function in fetch_data.php
+
+        foreach ($departmentList as $department) {
+            echo "<option value='{$department['location']}'>{$department['location']}</option>";
+        }
+        ?>
+    </select>
+                
+                
                     </div>
                 
                     
@@ -151,6 +166,28 @@ $('#dataTableContainer').on('click', '.deleteButton', function() {
         $.ajax({
             type: 'GET',
             url: "../process/roomDelete.php",
+            data: { id: courseID },
+            success: function(response) {
+                alert(response);
+                fetchAndDisplayData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    } else {
+        // Action canceled
+        console.log("Deletion canceled");
+    }
+});
+            // Edit button click event
+$('#dataTableContainer').on('click', '.editButton', function() {
+    var courseID = $(this).data('id');
+
+    if (confirm("Are you sure you want to delete this item?")) {
+        $.ajax({
+            type: 'GET',
+            url: "../process/roomDeletess.php",
             data: { id: courseID },
             success: function(response) {
                 alert(response);

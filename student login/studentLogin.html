@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="login.css">
+    
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Student Login</div>
+                <div class="card-body">
+                    <form id="loginForm" action="process_login.php" method="post">
+                        <div class="form-group">
+                            <label for="indexNumberEmail">Index Number/Email:</label>
+                            <input type="text" class="form-control" id="indexNumberEmail" name="indexNumberEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <p>
+                            <label for="loginbtn">Don't account?</label>
+                            <a href="studentSignup.html">Sign Up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript -->
+<script>
+    // Define a mapping of faculties to their respective departments
+    const facultyDepartments = {
+        faculty1: ["Department 1A", "Department 1B", "Department 1C"],
+        faculty2: ["Department 2A", "Department 2B", "Department 2C"]
+        // Add more faculties and departments as needed
+    };
+
+    function updateDepartments() {
+        const facultySelect = document.getElementById("faculty");
+        const departmentSelect = document.getElementById("department");
+
+        // Clear existing options
+        departmentSelect.innerHTML = "";
+
+        // Get selected faculty
+        const selectedFaculty = facultySelect.value;
+
+        // Populate departments based on the selected faculty
+        facultyDepartments[selectedFaculty].forEach(department => {
+            const option = document.createElement("option");
+            option.value = department;
+            option.textContent = department;
+            departmentSelect.appendChild(option);
+        });
+    }
+</script>
+
+</body>
+</html>

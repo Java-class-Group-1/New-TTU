@@ -71,7 +71,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
                 $hallSize = $roomStmt->fetchColumn();
 
                 // Check if the number of students exceeds the hall size
-                if ( $students >= $hallSize ) {
+                if ( $students > $hallSize ) {
                     header( 'Content-Type: application/json' );
                     echo json_encode( [ 'status' => 'Errors', 'message' => 'Number of students exceeds room size' ] );
                 } else {

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <!-- Select2 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+<!-- Bootstrap CSS (if not included already) -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Your custom CSS -->
+<link rel="stylesheet" href="login.css">
+<!-- Add this script to your HTML file -->
+<script>
+    function validateForm() {
+        var password = document.getElementById("password").value;
+        var confirmedPassword = document.getElementById("confirmedPassword").value;
+
+        if (password !== confirmedPassword) {
+            alert("Error: Passwords do not match.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+
+    
+</head>
+<body style="background-color: lightblue;">
+
+<div class="container">
+    <!--<img src="TTU-logo.png" alt="school logo">-->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Student signUp</div>
+                <div class="card-body">
+                    <form id="signupForm" action="process_signup.php" method="post" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="indexNumberEmail">Index Number/Email:</label>
+                            <input type="text" class="form-control" id="indexNumberEmail" name="indexNumberEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmedPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmedPassword" name="confirmedPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="faculty">Faculty:</label>
+                            <select class="form-control js-example-basic-single" id="faculty" name="faculty" onchange="updateDepartments()" required>
+                                <option value="">--Select Faculty--</option>
+                                <option value="faculty1">Applied Art and Technology</option>
+                                <option value="faculty2">Applied Sciences</option>
+                                <option value="faculty3">Engineering</option>
+                                <option value="faculty4">Business and Management Studies</option>
+                                <option value="faculty5">Built and Natural Environment</option>
+                                <!-- Add more faculties as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department:</label>
+                            <select class="form-control js-example-basic-single" id="department" name="department" required>
+                                <!-- Options will be dynamically populated using JavaScript -->
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <p>
+                        <label for="loginbtn">Already have an account?</label>
+                        <a href="studentLogin.html">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js (required by Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize Select2 for Faculty dropdown
+        $('#faculty').select2();
+
+        // Initialize Select2 for Department dropdown
+        $('#department').select2();
+    });
+</script>
+
+<!-- Your custom JavaScript -->
+<script>
+    // Define a mapping of faculties to their respective departments
+    const facultyDepartments = {
+        faculty1: ["Graphics", "Textiles", "Painting","Sculpture","Ceramics","Fashion","Media and Comm"],
+        faculty2: ["Hospitality", "Maths and Statistics", "Medical Lab","Dipensary","Tourism","ICT","Science Lab"],
+        faculty3: ["Civil", "Mechanical Eng.", "Electrical","Processing","Petroleum"],
+        faculty4: ["Accountancy", "Marketing", "Purchasing and Supp","Secretaryship"],
+        faculty5: ["Renewable Energy", "Interior Design", "Estate Management","Building","Plumbing","Welding"]
+        // Add more faculties and departments as needed
+    };
+
+    function updateDepartments() {
+        const facultySelect = document.getElementById("faculty");
+        const departmentSelect = document.getElementById("department");
+
+        // Clear existing options
+        departmentSelect.innerHTML = "";
+
+        // Get selected faculty
+        const selectedFaculty = facultySelect.value;
+
+        // Populate departments based on the selected faculty
+        facultyDepartments[selectedFaculty].forEach(department => {
+            const option = document.createElement("option");
+            option.value = department;
+            option.textContent = department;
+            departmentSelect.appendChild(option);
+        });
+    }
+</script>
+
+
+
+</body>
+</html>

@@ -188,7 +188,7 @@ $('#dataTableContainer').on('click', '.editButton', function() {
     if (confirm("Are you sure you want to Edit this Course?")) {
         $.ajax({
             type: 'GET',
-            url: "../process/CoursesDelete.php?action=fetchcoursesEdit",
+            url: "../process/CoursesDeletess.php?action=fetchcoursesEdit",
             data: { id: programId },
             success: function(response) {
                 alert(response);
